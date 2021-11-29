@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackBehavior : MonoBehaviour
+public class AttackBehaviour : MonoBehaviour
 {
     public double Attack;
     // Start is called before the first frame update
