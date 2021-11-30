@@ -5,8 +5,8 @@ using UnityEngine;
 public class HealthBehaviour : MonoBehaviour
 {
 
-    private double HitPoints;
-    private double MaximumHitPoints;
+    public double HitPoints;
+    public double MaximumHitPoints;
 
     void Start()
     {
