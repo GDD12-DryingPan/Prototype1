@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class HealthBehaviour : MonoBehaviour
 {
-    public double MaximumHitPoints = 100;
 
     private double HitPoints;
 
-    void Awake()
-    {
-        HitPoints = MaximumHitPoints;
-    }
-
     void Start()
     {
-
+        HitPoints = 100;
     }
 
     void Update()
@@ -41,5 +35,10 @@ public class HealthBehaviour : MonoBehaviour
         {
             HitPoints = MaximumHitPoints;
         }
+    }
+
+    public void generateHitPoints(double progression)
+    {
+
     }
 }

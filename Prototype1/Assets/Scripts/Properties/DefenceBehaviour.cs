@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class DefenceBehaviour : MonoBehaviour
 {
-    public double Defence = 100;
+    public double Defence;
 
     void Start()
+    {
+        Defence = 100;
+    }
+
+    void Update()
     {
 
     }
 
-    void Update()
+    public void generateDefence(double progression)
     {
 
     }
