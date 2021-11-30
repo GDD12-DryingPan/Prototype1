@@ -6,6 +6,7 @@ public class HealthBehaviour : MonoBehaviour
 {
 
     private double HitPoints;
+    private double MaximumHitPoints;
 
     void Start()
     {
@@ -14,7 +15,7 @@ public class HealthBehaviour : MonoBehaviour
 
     void Update()
     {
-
+        MaximumHitPoints = HitPoints;
     }
 
     public void Damage(double damage)
