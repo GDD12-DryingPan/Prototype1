@@ -9,6 +9,7 @@ Prototype1/[Bb]uild/
 Prototype1/[Bb]uilds/
 Prototype1/[Ll]ogs/
 Prototype1/[Mm]emoryCaptures/
+Prototype1/ProjectSettings/ProjectVersion.txt
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 Prototype1!/[Aa]ssets/**/*.meta
