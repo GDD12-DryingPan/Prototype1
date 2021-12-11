@@ -1238,6 +1238,8 @@ GameObject:
   m_Component:
   - component: {fileID: 274350466}
   - component: {fileID: 274350465}
+  - component: {fileID: 274350468}
+  - component: {fileID: 274350467}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -1311,6 +1313,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 103
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &274350467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274350464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26b8181e33f2dc4ab8c85f782bc218a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Defence: 100
+--- !u!114 &274350468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274350464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6653d5764e977d9478a703f37f229bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: 100
 --- !u!1001 &325234723
 PrefabInstance:
   m_ObjectHideFlags: 0
