@@ -65,3 +65,7 @@ Prototype1/ProjectSettings/ProjectVersion.txt
 #PSD and AI files from photoshop
 *.psd
 *.ai
+Prototype1/Packages/manifest.json
+Prototype1/Packages/packages-lock.json
+Prototype1/ProjectSettings/ProjectVersion.txt
+Prototype1/UserSettings/EditorUserSettings.asset
