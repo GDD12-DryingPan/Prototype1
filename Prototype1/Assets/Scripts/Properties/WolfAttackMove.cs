@@ -34,6 +34,7 @@ public class WolfAttackMove : MonoBehaviour
         // information on the state of the round, like attack phase1 or 2 and move phase 1 or 2, or we will have it play out all at once and then repeat
         // still no clear approach, but yeah, there needs to be a central script where all the gameobjects can access game data about the phase 1 round is in.
         health.HitPoints = health.HitPoints - attackValue.Attack;
+        Debug.Log("Attack of Wolf did dammage: " + health.HitPoints);
 
     }
 }
