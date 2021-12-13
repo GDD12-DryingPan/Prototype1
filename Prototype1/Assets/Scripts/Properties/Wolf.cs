@@ -21,6 +21,11 @@ public class Wolf : MonoBehaviour
     // this is for when the wolf gets attacked
     void OnTriggerEnter2D(Collider2D c)
     {
+        GameObject g = c.gameObject;
 
+        // my brain blank
+        // this needs to be edited to fit the situation
+
+        OldMan oldMan = g.transform.parent.gameObject.GetComponent<OldMan>();
     }
 }
