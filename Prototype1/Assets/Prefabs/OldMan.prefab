@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7788108992451134123}
   - component: {fileID: 7788108992451134116}
   - component: {fileID: 7788108992451134117}
-  - component: {fileID: 7788108992451134118}
   m_Layer: 0
   m_Name: OldMan
   m_TagString: Untagged
@@ -98,19 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 40.11, y: 45.13477, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7788108992451134118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7788108992451134119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76b24fefd29f2d4aa53c9a297b10d30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterProperties: {fileID: 0}
 --- !u!1 &7788108993582997909
 GameObject:
   m_ObjectHideFlags: 0
