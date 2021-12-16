@@ -23,6 +23,6 @@ public class MouseControlCharacter : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        c.gameObject
+        c.gameObject.tag;
     }
 }
