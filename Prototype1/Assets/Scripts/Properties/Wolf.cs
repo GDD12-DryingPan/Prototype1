@@ -26,6 +26,6 @@ public class Wolf : MonoBehaviour
         // my brain blank
         // this needs to be edited to fit the situation
 
-        OldMan oldMan = g.transform.parent.gameObject.GetComponent<OldMan>();
+        // old man needs to have his attributes added by hand!
     }
 }
