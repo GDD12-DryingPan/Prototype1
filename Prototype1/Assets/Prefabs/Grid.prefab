@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6043283303672507931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.15, y: 3.91, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.11, y: 0.17, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObject: {fileID: 7116216457256192522, guid: 83ffa6a3d269ba344a9c5e63b6b90c4a, type: 3}
-  fieldNumber: 9
+  fieldNumber: 7
   fieldCharacter: 65
 --- !u!61 &166202998119485171
 BoxCollider2D:

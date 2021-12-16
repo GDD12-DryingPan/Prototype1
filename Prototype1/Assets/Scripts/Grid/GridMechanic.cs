@@ -22,7 +22,7 @@ public class GridMechanic : MonoBehaviour
 
     }
 
-    void onTriggerEnter2D(Collider c)
+    void onTriggerEnter2D(Collider2D c)
     {
 
     }
