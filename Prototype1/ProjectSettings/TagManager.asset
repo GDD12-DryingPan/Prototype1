@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MouseBasedControl
   layers:
   - Default
   - TransparentFX
