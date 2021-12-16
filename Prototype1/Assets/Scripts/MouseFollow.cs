@@ -13,6 +13,17 @@ public class MouseFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // load MouseControlCharacter by looking for it with tag
+        //
+        // check if it carries gameobject
+        //
+        // get gameObject
+        //
+        // feed to coliding tile while clicking
+    }
+
+    void FixedUpdate()
+    {
         transform.position = Input.mousePosition;
     }
 }
