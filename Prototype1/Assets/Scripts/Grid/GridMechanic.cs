@@ -18,4 +18,9 @@ public class GridMechanic : MonoBehaviour
     {
 
     }
+
+    void onTriggerEnter2D(Collider c)
+    {
+
+    }
 }

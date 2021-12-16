@@ -8064,10 +8064,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2028081876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8491c3e12e472d84cb788d20533c41af, type: 3}
+  m_Script: {fileID: 11500000, guid: f76b24fefd29f2d4aa53c9a297b10d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterProperties: {fileID: 1707467837068309831, guid: 9721da6291a58f1428c7acdc72f0870e, type: 3}
+  characterProperties: {fileID: 0}
 --- !u!65 &2028081878
 BoxCollider:
   m_ObjectHideFlags: 0
