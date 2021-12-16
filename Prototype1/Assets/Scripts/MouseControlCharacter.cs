@@ -22,7 +22,7 @@ public class MouseControlCharacter : MonoBehaviour
     {
         if (mouseClickedOnce && mouseHasContent)
         {
-
+            mouseClickedTwice = true;
         }
         mouseClickedOnce = Input.GetMouseButtonDown(0);
     }
@@ -32,6 +32,9 @@ public class MouseControlCharacter : MonoBehaviour
         if (c.gameObject.tag == "Grid" && mouseClickedTwice)
         {
             c.gameObject.GetComponent<GridMechanic>().gameObject1 = g1;
+            mouseClickedOnce = false;
+            mouseClickedTwice = false;
+            mouseHasContent = false;
         }
         if (c.gameObject.tag == "OldMan" && mouseClickedOnce)
         {
