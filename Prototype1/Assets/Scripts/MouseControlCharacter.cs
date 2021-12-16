@@ -35,10 +35,7 @@ public class MouseControlCharacter : MonoBehaviour
         {
             g1 = c.gameObject;
         }
-        if (c.gameObject.tag == "EmptyGrid" && mouseClickedOnce)
-        {
-            g1 = c.gameObject;
-        }
+
         mouseClickedOnce = Input.GetMouseButtonUp(0);
     }
 }
