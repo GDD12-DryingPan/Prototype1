@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class GridMechanic : MonoBehaviour
 {
-    public GameObject gameObject;
+    public GameObject gameObject1;
     public int fieldNumber;
     public char fieldCharacter;
     private SpriteRenderer render;
     // Start is called before the first frame update
     void Start()
     {
-        render = gameObject.GetComponent<SpriteRenderer>();
-        render.sortingOrder = 50;
-        Instantiate(gameObject, gameObject.transform);
+        Instantiate(gameObject1, gameObject.transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     void onTriggerEnter2D(Collider2D c)
