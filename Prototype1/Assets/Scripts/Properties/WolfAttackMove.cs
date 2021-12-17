@@ -20,10 +20,17 @@ public class WolfAttackMove : MonoBehaviour
     }
 
     // this is for the colider box in front of the wolf
-    void OnTriggerEnter2D(Collider2D c)
+    void OnTriggerEnter(Collider c)
     {
         // for now it only works for the old man and not any other game object that has a character relation
         GameObject g = c.gameObject;
+
+        HealthBehaviour h = g.GetComponent<HealthBehaviour>();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            h.HitPoints -= (attackValue.Attack - h.Shield);
+        }
 
         // character properties will be deleted
         // fix later

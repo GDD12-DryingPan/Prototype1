@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 7788108992451134116}
   - component: {fileID: 4091057063475496949}
   - component: {fileID: 7875365425290048117}
+  - component: {fileID: 3445507881610449168}
+  - component: {fileID: -2964386335325204040}
+  - component: {fileID: -6451902784783390621}
   m_Layer: 0
   m_Name: OldMan
   m_TagString: OldMan
@@ -110,6 +113,47 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 40.11, y: 45.13477, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3445507881610449168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788108992451134119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6856a24170a71b4d93e11fcc4c30ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitPoints: 1000
+  MaximumHitPoints: 1000
+  Shield: 0
+--- !u!114 &-2964386335325204040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788108992451134119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6653d5764e977d9478a703f37f229bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: 50
+--- !u!114 &-6451902784783390621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788108992451134119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26b8181e33f2dc4ab8c85f782bc218a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Defence: 100
 --- !u!1 &7788108993582997909
 GameObject:
   m_ObjectHideFlags: 0

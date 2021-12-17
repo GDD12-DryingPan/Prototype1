@@ -19,13 +19,26 @@ public class Wolf : MonoBehaviour
     }
 
     // this is for when the wolf gets attacked
-    void OnTriggerEnter2D(Collider2D c)
+    void OnTriggerEnter(Collider c)
     {
         GameObject g = c.gameObject;
 
-        // my brain blank
-        // this needs to be edited to fit the situation
+        if (g.tag == "Grid")
+        {
+            GridMechanic m = g.GetComponent<GridMechanic>();
+            GameObject inside = m.gameObject1;
+            if (inside.tag == "EmptyGrid")
+            {
+                m.gameObject1 = gameObject;
+            }
+        }
+        else
+        {
+            if (g.tag == "OldMan")
+            {
 
-        // old man needs to have his attributes added by hand!
+            }
+        }
+
     }
 }
