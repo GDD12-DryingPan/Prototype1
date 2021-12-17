@@ -7,6 +7,7 @@ public class HealthBehaviour : MonoBehaviour
 
     public double HitPoints;
     public double MaximumHitPoints;
+    public double Shield;
 
     void Start()
     {
@@ -20,12 +21,25 @@ public class HealthBehaviour : MonoBehaviour
 
     public void Damage(double damage)
     {
-        HitPoints -= damage;
-
-        if (HitPoints <= 0)
+        if (Shield <= 0)
         {
-            // Die
+            HitPoints -= damage;
+
+            if (HitPoints <= 0)
+            {
+                // Die
+            }
         }
+        else
+        {
+            Shield -= damage;
+            if(Shield < 0)
+            {
+                HitPoints -= Shield;
+                Shield = 0;
+            }
+        }
+        
     }
 
     public void Heal(double heal)
@@ -36,6 +50,11 @@ public class HealthBehaviour : MonoBehaviour
         {
             HitPoints = MaximumHitPoints;
         }
+    }
+
+    public void addShield(double newShield)
+    {
+        Shield += newShield;
     }
 
     public void generateHitPoints(double progression)
