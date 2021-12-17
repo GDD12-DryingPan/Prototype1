@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackCard : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class AttackCard : MonoBehaviour
 
     public AudioClip AttackSoundEffect;
 
-    public void Play()
+    public void Play(Button button)
     {
         Enemy.HitPoints = 0;
-
         AudioSource.PlayClipAtPoint(AttackSoundEffect, Vector2.zero);
+
+        button.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update

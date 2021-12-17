@@ -23,7 +23,7 @@ public class MouseControl : MonoBehaviour
             RaycastHit raycastHit;
             if (Physics.Raycast(ray, out raycastHit))
             {
-                Debug.Log(raycastHit.transform.tag);
+                //Debug.Log(raycastHit.transform.tag);
 
                 if (raycastHit.transform.tag == "OldMan")
                 {
