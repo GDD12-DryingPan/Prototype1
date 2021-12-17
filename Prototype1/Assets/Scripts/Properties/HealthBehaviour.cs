@@ -21,6 +21,8 @@ public class HealthBehaviour : MonoBehaviour
 
     public void Damage(double damage)
     {
+    /* The shield will absorb the damage first, and then will pass
+     the damage left to the health */
         if (Shield <= 0)
         {
             HitPoints -= damage;

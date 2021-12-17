@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackScript : MonoBehaviour
+public class HealScript : MonoBehaviour
 {
-    public double attackValue = 10;
+    public double healValue = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +18,8 @@ public class AttackScript : MonoBehaviour
         
     }
 
-    public void attackAction(GameObject gObject)
+    public void healAction(GameObject gObject)
     {
-        gObject.GetComponent<HealthBehaviour>().Damage(attackValue);
+        gObject.GetComponent<HealthBehaviour>().Heal(healValue);
     }
 }
