@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 123465366}
   - component: {fileID: 123465365}
   - component: {fileID: 123465364}
+  - component: {fileID: 123465367}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: Card
@@ -475,27 +476,15 @@ MonoBehaviour:
       - m_Target: {fileID: 503808999}
         m_TargetAssemblyTypeName: AttackCard, Assembly-CSharp
         m_MethodName: Play
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 123465364}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 503808997}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &123465365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +523,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123465362}
   m_CullTransparentMesh: 1
+--- !u!114 &123465367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123465362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099c12610176f384f8fc08f157cdadf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 10
+  Enemy: {fileID: 0}
+  AttackSoundEffect: {fileID: 0}
 --- !u!1001 &133040739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2433,7 +2437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   Enemy: {fileID: 5608527248460799312, guid: ffdc7b3774b292c458301e05b81f66b4, type: 3}
-  AttackSoundEffect: {fileID: 8300000, guid: 715680b4e8aa7e24caa2d1a71050cccf, type: 3}
+  AttackSoundEffect: {fileID: 8300000, guid: abed5a1b229075d4eb9f6ad1b8ddc506, type: 3}
 --- !u!1001 &521610916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2604,10 +2608,10 @@ MonoBehaviour:
       - m_Target: {fileID: 503808999}
         m_TargetAssemblyTypeName: AttackCard, Assembly-CSharp
         m_MethodName: Play
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 629784697}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6629,10 +6633,10 @@ MonoBehaviour:
       - m_Target: {fileID: 503808999}
         m_TargetAssemblyTypeName: AttackCard, Assembly-CSharp
         m_MethodName: Play
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1322568293}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
