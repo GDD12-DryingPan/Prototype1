@@ -55,9 +55,21 @@ public class Cards : MonoBehaviour
     }
 
     // Play a card in hand
-    public void PlayCard(int i)
+    public void PlayCard(int i, GameObject objective)
     {
         // TODO: Add card effect
+        if (this.gameObject.GetComponent<AttackScript>() != null)
+        {
+            this.gameObject.GetComponent<AttackScript>().attackAction(objective);
+        }
+        if (this.gameObject.GetComponent<HealScript>() != null)
+        {
+            this.gameObject.GetComponent<HealScript>().healAction(objective);
+        }
+        if (this.gameObject.GetComponent<ShieldScript>() != null)
+        {
+            this.gameObject.GetComponent<ShieldScript>().shieldAction(objective);
+        }
 
         DiscardPile.Add(Hand.ElementAt(i));
         Hand.RemoveAt(i);
