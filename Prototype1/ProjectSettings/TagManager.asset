@@ -9,6 +9,7 @@ TagManager:
   - OldMan
   - Wolf
   - EmptyGrid
+  - Card
   layers:
   - Default
   - TransparentFX
