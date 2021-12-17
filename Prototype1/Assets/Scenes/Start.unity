@@ -193,16 +193,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Team Drying Pan
-
-
-    Sebastian Wardana 01642649 Coding
-
-    Miha Kosi
-    12110733 Music and Sound
-
-
-    Continue with any key!'
+  m_Text: "Team Drying Pan\n\nSebastian Wardana 01642649 Coding\nAn\u017Ee Jen\u0161terle
+    12111837 Coding\nPablo Morales Vallejo 12112119 Coding\nEkaterina Baikova 12045991
+    Art\nMiha Kosi 12110733 Music and Sound\n\nContinue with any key!"
 --- !u!222 &256101008
 CanvasRenderer:
   m_ObjectHideFlags: 0
