@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5491131526548048808}
   - component: {fileID: 1573115751154442983}
   - component: {fileID: 982560937356775136}
-  - component: {fileID: 166202998119485171}
+  - component: {fileID: 6729444787247351099}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -99,29 +99,16 @@ MonoBehaviour:
   gameObject1: {fileID: 0}
   fieldNumber: 7
   fieldCharacter: 65
---- !u!61 &166202998119485171
-BoxCollider2D:
+--- !u!65 &6729444787247351099
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6043283303672507931}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.57, y: 4.94}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2}
-  m_EdgeRadius: 0
+  m_Size: {x: 4, y: 2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
