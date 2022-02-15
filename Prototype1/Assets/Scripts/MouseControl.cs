@@ -29,7 +29,7 @@ public class MouseControl : MonoBehaviour
                 {
                     OldManSelected = true;
                     OldMan = raycastHit.transform;
-                    OldMan oldman = raycastHit.transform.gameObject.GetComponent<>();
+                    OldMan oldman = raycastHit.transform.gameObject.GetComponent<OldMan>();
                 }
                 else if (raycastHit.transform.tag == "Grid" && OldManSelected)
                 {
