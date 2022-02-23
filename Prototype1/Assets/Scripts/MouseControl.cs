@@ -24,6 +24,8 @@ public class MouseControl : MonoBehaviour
 
             if (hit.collider != null)
             {
+                //Debug.Log(hit.collider.transform.tag);
+
                 if (hit.collider.transform.tag == "OldMan")
                 {
                     OldManSelected = true;

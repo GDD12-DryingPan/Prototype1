@@ -18,8 +18,8 @@ public class ShieldScript : MonoBehaviour
         
     }
 
-    public void shieldAction(GameObject gObject)
-    {
-        gObject.GetComponent<HealthBehaviour>().addShield(ShieldValue);
-    }
+    //public void shieldAction(GameObject gObject)
+    //{
+    //    gObject.GetComponent<HealthBehaviour>().addShield(ShieldValue);
+    //}
 }

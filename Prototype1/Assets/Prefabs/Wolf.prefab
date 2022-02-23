@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6856a24170a71b4d93e11fcc4c30ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 1000
-  MaximumHitPoints: 1000
+  HitPoints: 20
+  MaximumHitPoints: 20
   Shield: 0
 --- !u!114 &5608527248460799314
 MonoBehaviour:
@@ -234,7 +234,7 @@ BoxCollider:
   m_GameObject: {fileID: 5608527249472842209}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 30, y: 100, z: 0.2}
   m_Center: {x: 0, y: 40, z: 0}

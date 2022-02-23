@@ -29,7 +29,8 @@ public class WolfAttackMove : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            h.HitPoints -= (attackValue.Attack - h.Shield);
+            h.Damage(attackValue.Attack);
+            //h.HitPoints -= (attackValue.Attack - h.Shield);
         }
 
         // character properties will be deleted

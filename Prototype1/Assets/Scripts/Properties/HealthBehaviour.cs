@@ -1,47 +1,42 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthBehaviour : MonoBehaviour
 {
-
-    public double HitPoints;
     public double MaximumHitPoints;
     public double Shield;
 
+    private double HitPoints;
+
     void Start()
     {
-        HitPoints = 100;
-    }
-
-    void Update()
-    {
-        MaximumHitPoints = HitPoints;
+        HitPoints = MaximumHitPoints;
     }
 
     public void Damage(double damage)
     {
-    /* The shield will absorb the damage first, and then will pass
-     the damage left to the health */
-        if (Shield <= 0)
+        // Shield absorbs the damage first, when worn out, the remaining damage is dealt to the character
+        if (Shield > 0)
         {
-            HitPoints -= damage;
-
-            if (HitPoints <= 0)
+            Shield -= damage;
+            if (Shield < 0)
             {
-                // Die
+                HitPoints -= Math.Abs(Shield);
+                Shield = 0;
             }
         }
         else
         {
-            Shield -= damage;
-            if(Shield < 0)
-            {
-                HitPoints -= Shield;
-                Shield = 0;
-            }
+            HitPoints -= damage;
         }
-        
+
+        if (HitPoints <= 0)
+        {
+            // Die
+            Debug.Log("DEAD");
+        }
     }
 
     public void Heal(double heal)
@@ -54,13 +49,8 @@ public class HealthBehaviour : MonoBehaviour
         }
     }
 
-    public void addShield(double newShield)
+    public void Protect(double protect)
     {
-        Shield += newShield;
-    }
-
-    public void generateHitPoints(double progression)
-    {
-
+        Shield += protect;
     }
 }

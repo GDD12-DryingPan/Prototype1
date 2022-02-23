@@ -12,7 +12,7 @@ public class AttackCard : MonoBehaviour
 
     public void Play(Button button)
     {
-        Enemy.HitPoints = 0;
+        //Enemy.HitPoints = 0;
         AudioSource.PlayClipAtPoint(AttackSoundEffect, Vector2.zero);
 
         button.gameObject.SetActive(false);

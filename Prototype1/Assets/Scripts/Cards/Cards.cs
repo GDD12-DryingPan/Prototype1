@@ -9,6 +9,10 @@ public class Cards : MonoBehaviour
     public List<GameObject> CardButtons;
     public List<Card> InitialDeck;
 
+    public AudioClip AttackSoundEffect;
+    public AudioClip ShieldSoundEffect;
+    public AudioClip HealSoundEffect;
+
     private IList<Card> Deck = new List<Card>();
 
     private IList<Card> DrawPile = new List<Card>();
@@ -51,7 +55,7 @@ public class Cards : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-                Debug.Log(hit.collider);
+                //Debug.Log(hit.collider);
 
                 if (hit.collider != null)
                 {
@@ -65,15 +69,39 @@ public class Cards : MonoBehaviour
                             if (CardBeingPlayed.ApplyToEnemy)
                             {
                                 // Debuff to enemy
+                                HealthBehaviour healthBehaviour = character.gameObject.GetComponent<HealthBehaviour>();
+
+                                if (CardBeingPlayed.Attack > 0)
+                                {
+                                    healthBehaviour.Damage(CardBeingPlayed.Attack);
+                                    PlaySoundEffect(AttackSoundEffect);
+                                }
                             }
                             else
                             {
                                 // Buff to character
+                                HealthBehaviour healthBehaviour = character.gameObject.GetComponent<HealthBehaviour>();
+
+                                if (CardBeingPlayed.Shield > 0)
+                                {
+                                    healthBehaviour.Protect(CardBeingPlayed.Shield);
+                                    PlaySoundEffect(ShieldSoundEffect);
+                                }
+                                if (CardBeingPlayed.Heal > 0)
+                                {
+                                    healthBehaviour.Heal(CardBeingPlayed.Heal);
+                                    PlaySoundEffect(HealSoundEffect);
+                                }
                             }
 
                             // Remove card from hand
                             DiscardPile.Add(Hand.ElementAt(CardBeingPlayedIndex));
                             Hand.RemoveAt(CardBeingPlayedIndex);
+
+                            GameObject cardButton = CardButtons.ElementAt(CardBeingPlayedIndex);
+                            Vector3 position = cardButton.gameObject.transform.position;
+                            position.y -= 0.25f;
+                            cardButton.gameObject.transform.position = position;
 
                             IsCardBeingPlayed = false;
 
@@ -147,8 +175,26 @@ public class Cards : MonoBehaviour
     // Play a card in hand
     public void PlayCard(int i)
     {
-        IsCardBeingPlayed = true;
-        CardBeingPlayedIndex = i;
+        if (IsCardBeingPlayed)
+        {
+            GameObject cardButton = CardButtons.ElementAt(CardBeingPlayedIndex);
+            Vector3 position = cardButton.gameObject.transform.position;
+            position.y -= 0.25f;
+            cardButton.gameObject.transform.position = position;
+
+            IsCardBeingPlayed = false;
+        }
+
+        if (!IsCardBeingPlayed)
+        {
+            IsCardBeingPlayed = true;
+            CardBeingPlayedIndex = i;
+
+            GameObject cardButton = CardButtons.ElementAt(i);
+            Vector3 position = cardButton.gameObject.transform.position;
+            position.y += 0.25f;
+            cardButton.gameObject.transform.position = position;
+        }
     }
 
     // Discard hand at the end of the turn
@@ -164,8 +210,15 @@ public class Cards : MonoBehaviour
         DrawCards(3);
     }
 
+    // Determine if the object selection is valid
     private bool ValidMove(Card card, Character character)
     {
         return (card.ApplyToEnemy && character.IsEnemy) || (!card.ApplyToEnemy && !character.IsEnemy);
+    }
+
+    // Play sound effect
+    private void PlaySoundEffect(AudioClip audio)
+    {
+        AudioSource.PlayClipAtPoint(audio, Vector2.zero);
     }
 }
