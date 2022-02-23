@@ -20,23 +20,22 @@ public class MouseControl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit raycastHit;
-            if (Physics.Raycast(ray, out raycastHit))
-            {
-                //Debug.Log(raycastHit.transform.tag);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-                if (raycastHit.transform.tag == "OldMan")
+            if (hit.collider != null)
+            {
+                if (hit.collider.transform.tag == "OldMan")
                 {
                     OldManSelected = true;
-                    OldMan = raycastHit.transform;
-                    OldMan oldman = raycastHit.transform.gameObject.GetComponent<OldMan>();
+                    OldMan = hit.collider.transform;
+                    OldMan oldman = hit.collider.transform.gameObject.GetComponent<OldMan>();
                 }
-                else if (raycastHit.transform.tag == "Grid" && OldManSelected)
+                else if (hit.collider.transform.tag == "Grid" && OldManSelected)
                 {
                     // deselect old man
                     OldManSelected = false;
                     // get fieldNumber and fieldCharacter from scriptobject, but first get the clicked on grids script
-                    GridMechanic grid = raycastHit.transform.gameObject.GetComponent<GridMechanic>();
+                    GridMechanic grid = hit.collider.transform.gameObject.GetComponent<GridMechanic>();
 
                     // we want to check where the old man or any character is going before letting them go there
                     // for now we will output a debug log so we know the input has been registered and taken care off
@@ -50,7 +49,7 @@ public class MouseControl : MonoBehaviour
 
                     // NOTE: Open scripts OldMan and GridMechanic to work on functionality 
 
-                    OldMan.position = raycastHit.transform.position;
+                    OldMan.position = hit.collider.transform.position;
                 }
             }
         }

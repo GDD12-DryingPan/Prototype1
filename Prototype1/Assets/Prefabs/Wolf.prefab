@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5608527248460799318}
   - component: {fileID: 5608527248460799312}
   - component: {fileID: 5608527248460799314}
-  - component: {fileID: 1295726781509398728}
-  - component: {fileID: 7286557697742950084}
+  - component: {fileID: 2829365513954373128}
+  - component: {fileID: 3197967693188436251}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Wolf
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608527248460799317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39, y: -0.28, z: 1}
+  m_LocalPosition: {x: 0.39, y: -0.28, z: -1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 5608527249472842208}
@@ -142,32 +142,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b53add113ee80a4e948b44b328290da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1295726781509398728
-BoxCollider:
+--- !u!114 &2829365513954373128
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608527248460799317}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 25.782755, y: 34.309998, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &7286557697742950084
-SphereCollider:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 569753303d00ab54b9434e568263c8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnemy: 1
+--- !u!61 &3197967693188436251
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608527248460799317}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 25.782755, y: 34.309998}
+    newSize: {x: 25.782755, y: 34.309998}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 17.154999
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 25.782755, y: 34.309998}
+  m_EdgeRadius: 0
 --- !u!1 &5608527249472842209
 GameObject:
   m_ObjectHideFlags: 0

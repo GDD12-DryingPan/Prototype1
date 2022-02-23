@@ -133,3 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6094d16a8c3cd4388e6267ad6727b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ApplyToEnemy: 1
+  Attack: 40
+  Shield: 0
+  Heal: 0

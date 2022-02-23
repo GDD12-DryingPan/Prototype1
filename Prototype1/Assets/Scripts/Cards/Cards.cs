@@ -15,6 +15,9 @@ public class Cards : MonoBehaviour
     private IList<Card> Hand = new List<Card>();
     private IList<Card> DiscardPile = new List<Card>();
 
+    private bool IsCardBeingPlayed = false;
+    private int CardBeingPlayedIndex;
+
     void Start()
     {
         if (Deck.Count() == 0)
@@ -39,8 +42,53 @@ public class Cards : MonoBehaviour
         DrawCards(3);
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (IsCardBeingPlayed)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+                Debug.Log(hit.collider);
+
+                if (hit.collider != null)
+                {
+                    Card CardBeingPlayed = Hand.ElementAt(CardBeingPlayedIndex);
+                    Character character = hit.collider.gameObject.GetComponent<Character>();
+                    if (character != null)
+                    {
+                        if (ValidMove(CardBeingPlayed, character))
+                        {
+                            // TODO: Apply card action to the selected character
+                            if (CardBeingPlayed.ApplyToEnemy)
+                            {
+                                // Debuff to enemy
+                            }
+                            else
+                            {
+                                // Buff to character
+                            }
+
+                            // Remove card from hand
+                            DiscardPile.Add(Hand.ElementAt(CardBeingPlayedIndex));
+                            Hand.RemoveAt(CardBeingPlayedIndex);
+
+                            IsCardBeingPlayed = false;
+
+                            // TODO: Incorporate into turn-based combat
+                            // At the moment we discard the hand and end turn as soon as any card is played
+                            DiscardHand();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     // Draw cards from draw pile
-    public void DrawCards(int numberOfCards)
+    private void DrawCards(int numberOfCards)
     {
         int cardsLeft = numberOfCards;
 
@@ -99,18 +147,12 @@ public class Cards : MonoBehaviour
     // Play a card in hand
     public void PlayCard(int i)
     {
-        // TODO: Add card effect (attack, protect, heal ...)
-
-        DiscardPile.Add(Hand.ElementAt(i));
-        Hand.RemoveAt(i);
-
-        // TODO: Incorporate into turn-based combat
-        // At the moment we discard the hand and end turn as soon as any card is played
-        DiscardHand();
+        IsCardBeingPlayed = true;
+        CardBeingPlayedIndex = i;
     }
 
     // Discard hand at the end of the turn
-    public void DiscardHand()
+    private void DiscardHand()
     {
         foreach (Card card in Hand)
         {
@@ -120,5 +162,10 @@ public class Cards : MonoBehaviour
 
         // Draw cards after discarding
         DrawCards(3);
+    }
+
+    private bool ValidMove(Card card, Character character)
+    {
+        return (card.ApplyToEnemy && character.IsEnemy) || (!card.ApplyToEnemy && !character.IsEnemy);
     }
 }
