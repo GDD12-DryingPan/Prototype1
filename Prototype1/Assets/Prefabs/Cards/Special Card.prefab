@@ -137,3 +137,4 @@ MonoBehaviour:
   Attack: 0
   Shield: 0
   Heal: 10
+  SoundEffect: {fileID: 8300000, guid: 7fda52c003941994788ba6f073b09d3a, type: 3}

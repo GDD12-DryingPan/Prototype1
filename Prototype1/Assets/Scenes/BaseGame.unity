@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 123465364}
   - component: {fileID: 123465367}
   - component: {fileID: 123465368}
+  - component: {fileID: 123465369}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: Card
@@ -427,7 +428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 63.399963, y: 93.2}
+  m_AnchoredPosition: {x: 62, y: 94}
   m_SizeDelta: {x: 75.76001, y: 143.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123465364
@@ -473,19 +474,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 123465365}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 503809000}
-        m_TargetAssemblyTypeName: Cards, Assembly-CSharp
-        m_MethodName: PlayCard
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &123465365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,7 +520,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123465362}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 099c12610176f384f8fc08f157cdadf5, type: 3}
   m_Name: 
@@ -555,6 +544,20 @@ MonoBehaviour:
   Attack: 0
   Shield: 0
   Heal: 0
+  SoundEffect: {fileID: 0}
+--- !u!114 &123465369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123465362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2970da6df55dc514583e1c8cb2d539a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 0
 --- !u!1001 &133040739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2409,76 +2412,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512654e30e6b0394dac30b6d52efbdfd, type: 3}
---- !u!1 &503808997
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 503808998}
-  - component: {fileID: 503808999}
-  - component: {fileID: 503809000}
-  m_Layer: 0
-  m_Name: Cards
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &503808998
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503808997}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 108
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &503808999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503808997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 099c12610176f384f8fc08f157cdadf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 10
-  Enemy: {fileID: 5608527248460799312, guid: ffdc7b3774b292c458301e05b81f66b4, type: 3}
-  AttackSoundEffect: {fileID: 8300000, guid: abed5a1b229075d4eb9f6ad1b8ddc506, type: 3}
---- !u!114 &503809000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503808997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d168104fa024bf4cb6dcd2dcb70cb8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CardButtons:
-  - {fileID: 123465362}
-  - {fileID: 1322568291}
-  - {fileID: 629784695}
-  InitialDeck:
-  - {fileID: 8399312975394972042, guid: d1f70ae4c917aa9439f59dff26de8363, type: 3}
-  - {fileID: 5541671581582440190, guid: 91607bea9e36b984c82b9bdd6fbe8a04, type: 3}
-  - {fileID: 1218146498078411977, guid: a14adff7178432646bc98b57dc661d4c, type: 3}
-  AttackSoundEffect: {fileID: 8300000, guid: 715680b4e8aa7e24caa2d1a71050cccf, type: 3}
-  ShieldSoundEffect: {fileID: 0}
-  HealSoundEffect: {fileID: 0}
 --- !u!1001 &521610916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2577,6 +2510,7 @@ GameObject:
   - component: {fileID: 629784698}
   - component: {fileID: 629784697}
   - component: {fileID: 629784700}
+  - component: {fileID: 629784701}
   m_Layer: 5
   m_Name: Card 3
   m_TagString: Card
@@ -2600,7 +2534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 240.29999, y: 93.2}
+  m_AnchoredPosition: {x: 232, y: 93.2}
   m_SizeDelta: {x: 75.76001, y: 143.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &629784697
@@ -2646,19 +2580,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 629784698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 503809000}
-        m_TargetAssemblyTypeName: Cards, Assembly-CSharp
-        m_MethodName: PlayCard
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &629784698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2713,6 +2635,20 @@ MonoBehaviour:
   Attack: 0
   Shield: 0
   Heal: 0
+  SoundEffect: {fileID: 0}
+--- !u!114 &629784701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629784695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2970da6df55dc514583e1c8cb2d539a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 2
 --- !u!1001 &664831738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6479,6 +6415,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512654e30e6b0394dac30b6d52efbdfd, type: 3}
+--- !u!1 &1316599518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316599520}
+  - component: {fileID: 1316599519}
+  m_Layer: 0
+  m_Name: Turns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1316599519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316599518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103fac6b83de83e41b4c8502a54b2916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1316599520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316599518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 108
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319904547
 GameObject:
   m_ObjectHideFlags: 0
@@ -6619,6 +6598,7 @@ GameObject:
   - component: {fileID: 1322568294}
   - component: {fileID: 1322568293}
   - component: {fileID: 1322568296}
+  - component: {fileID: 1322568297}
   m_Layer: 5
   m_Name: Card 2
   m_TagString: Card
@@ -6642,7 +6622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 152.31, y: 93.2}
+  m_AnchoredPosition: {x: 148, y: 94}
   m_SizeDelta: {x: 75.76001, y: 143.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322568293
@@ -6688,19 +6668,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1322568294}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 503809000}
-        m_TargetAssemblyTypeName: Cards, Assembly-CSharp
-        m_MethodName: PlayCard
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1322568294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6755,6 +6723,20 @@ MonoBehaviour:
   Attack: 0
   Shield: 0
   Heal: 0
+  SoundEffect: {fileID: 0}
+--- !u!114 &1322568297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322568291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2970da6df55dc514583e1c8cb2d539a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 1
 --- !u!1001 &1337278607
 PrefabInstance:
   m_ObjectHideFlags: 0

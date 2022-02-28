@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: -6451902784783390621}
   - component: {fileID: -136527284191703362}
   - component: {fileID: 8799113490151244176}
+  - component: {fileID: -4665778563584556121}
+  - component: {fileID: -9165097796882103426}
   m_Layer: 0
   m_Name: OldMan
   m_TagString: OldMan
@@ -96,7 +98,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7788108992451134119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37ce66013a1a07640ad877cf1015a285, type: 3}
   m_Name: 
@@ -115,7 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6856a24170a71b4d93e11fcc4c30ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 100
   MaximumHitPoints: 100
   Shield: 0
 --- !u!114 &-2964386335325204040
@@ -125,7 +126,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7788108992451134119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6653d5764e977d9478a703f37f229bf3, type: 3}
   m_Name: 
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7788108992451134119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c26b8181e33f2dc4ab8c85f782bc218a, type: 3}
   m_Name: 
@@ -183,6 +184,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40.11, y: 45.13477}
   m_EdgeRadius: 0
+--- !u!114 &-4665778563584556121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788108992451134119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fbaf9e644967c469f1c79fe0b3ad12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialDeck:
+  - {fileID: 8399312975394972042, guid: d1f70ae4c917aa9439f59dff26de8363, type: 3}
+  - {fileID: 5541671581582440190, guid: 91607bea9e36b984c82b9bdd6fbe8a04, type: 3}
+  - {fileID: 1218146498078411977, guid: a14adff7178432646bc98b57dc661d4c, type: 3}
+--- !u!114 &-9165097796882103426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788108992451134119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d168104fa024bf4cb6dcd2dcb70cb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialDeck:
+  - {fileID: 8399312975394972042, guid: d1f70ae4c917aa9439f59dff26de8363, type: 3}
+  - {fileID: 5541671581582440190, guid: 91607bea9e36b984c82b9bdd6fbe8a04, type: 3}
+  - {fileID: 1218146498078411977, guid: a14adff7178432646bc98b57dc661d4c, type: 3}
+  CanPlay: 0
 --- !u!1 &7788108993582997909
 GameObject:
   m_ObjectHideFlags: 0

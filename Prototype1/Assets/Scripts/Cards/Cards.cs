@@ -6,12 +6,9 @@ using UnityEngine.UI;
 
 public class Cards : MonoBehaviour
 {
-    public List<GameObject> CardButtons;
     public List<Card> InitialDeck;
 
-    public AudioClip AttackSoundEffect;
-    public AudioClip ShieldSoundEffect;
-    public AudioClip HealSoundEffect;
+    private IList<GameObject> CardButtons;
 
     private IList<Card> Deck = new List<Card>();
 
@@ -19,11 +16,32 @@ public class Cards : MonoBehaviour
     private IList<Card> Hand = new List<Card>();
     private IList<Card> DiscardPile = new List<Card>();
 
+    private bool CanPlay = false;
     private bool IsCardBeingPlayed = false;
     private int CardBeingPlayedIndex;
 
+    private Turns Turns;
+
+    private System.Random random = new System.Random();
+
     void Start()
     {
+        // Get card buttons
+        if (CardButtons == null)
+        {
+            CardButtons = GameObject.FindGameObjectsWithTag("Card");
+
+            for (int i = 0; i < CardButtons.Count(); i++)
+            {
+                var cardButton = CardButtons.ElementAt(i).GetComponent<Button>();
+                var index = CardButtons.ElementAt(i).GetComponent<CardButton>().i;
+
+                cardButton.onClick.AddListener(delegate { PlayCard(index); });
+            }
+        }
+
+
+        // Initialize the deck
         if (Deck.Count() == 0)
         {
             foreach (Card card in InitialDeck)
@@ -39,11 +57,7 @@ public class Cards : MonoBehaviour
         }
 
         // Shuffle the deck
-        var random = new System.Random();
         DrawPile = DrawPile.OrderBy(x => random.Next()).ToList();
-
-        // Draw the cards
-        DrawCards(3);
     }
 
     void Update()
@@ -54,8 +68,6 @@ public class Cards : MonoBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-                //Debug.Log(hit.collider);
 
                 if (hit.collider != null)
                 {
@@ -74,7 +86,6 @@ public class Cards : MonoBehaviour
                                 if (CardBeingPlayed.Attack > 0)
                                 {
                                     healthBehaviour.Damage(CardBeingPlayed.Attack);
-                                    PlaySoundEffect(AttackSoundEffect);
                                 }
                             }
                             else
@@ -85,14 +96,15 @@ public class Cards : MonoBehaviour
                                 if (CardBeingPlayed.Shield > 0)
                                 {
                                     healthBehaviour.Protect(CardBeingPlayed.Shield);
-                                    PlaySoundEffect(ShieldSoundEffect);
                                 }
                                 if (CardBeingPlayed.Heal > 0)
                                 {
                                     healthBehaviour.Heal(CardBeingPlayed.Heal);
-                                    PlaySoundEffect(HealSoundEffect);
                                 }
                             }
+
+                            // Card sound effect
+                            PlaySoundEffect(CardBeingPlayed.SoundEffect);
 
                             // Remove card from hand
                             DiscardPile.Add(Hand.ElementAt(CardBeingPlayedIndex));
@@ -107,6 +119,7 @@ public class Cards : MonoBehaviour
 
                             // TODO: Incorporate into turn-based combat
                             // At the moment we discard the hand and end turn as soon as any card is played
+                            CanPlay = false;
                             DiscardHand();
                         }
                     }
@@ -116,8 +129,10 @@ public class Cards : MonoBehaviour
     }
 
     // Draw cards from draw pile
-    private void DrawCards(int numberOfCards)
+    public void DrawCards(int numberOfCards, Turns turns)
     {
+        Turns = turns;
+
         int cardsLeft = numberOfCards;
 
         // Draw cards from draw pile
@@ -145,7 +160,6 @@ public class Cards : MonoBehaviour
             }
             DiscardPile.Clear();
 
-            var random = new System.Random();
             DrawPile = DrawPile.OrderBy(x => random.Next()).ToList();
         }
 
@@ -162,6 +176,8 @@ public class Cards : MonoBehaviour
             DrawPile.RemoveAt(0);
         }
 
+        CanPlay = true;
+
         // Show cards in hand
         for (int i = 0; i < Hand.Count(); i++)
         {
@@ -175,25 +191,28 @@ public class Cards : MonoBehaviour
     // Play a card in hand
     public void PlayCard(int i)
     {
-        if (IsCardBeingPlayed)
+        if (CanPlay)
         {
-            GameObject cardButton = CardButtons.ElementAt(CardBeingPlayedIndex);
-            Vector3 position = cardButton.gameObject.transform.position;
-            position.y -= 0.25f;
-            cardButton.gameObject.transform.position = position;
+            if (IsCardBeingPlayed)
+            {
+                GameObject cardButton = CardButtons.ElementAt(CardBeingPlayedIndex);
+                Vector3 position = cardButton.gameObject.transform.position;
+                position.y -= 0.25f;
+                cardButton.gameObject.transform.position = position;
 
-            IsCardBeingPlayed = false;
-        }
+                IsCardBeingPlayed = false;
+            }
 
-        if (!IsCardBeingPlayed)
-        {
-            IsCardBeingPlayed = true;
-            CardBeingPlayedIndex = i;
+            if (!IsCardBeingPlayed)
+            {
+                IsCardBeingPlayed = true;
+                CardBeingPlayedIndex = i;
 
-            GameObject cardButton = CardButtons.ElementAt(i);
-            Vector3 position = cardButton.gameObject.transform.position;
-            position.y += 0.25f;
-            cardButton.gameObject.transform.position = position;
+                GameObject cardButton = CardButtons.ElementAt(i);
+                Vector3 position = cardButton.gameObject.transform.position;
+                position.y += 0.25f;
+                cardButton.gameObject.transform.position = position;
+            }
         }
     }
 
@@ -206,8 +225,8 @@ public class Cards : MonoBehaviour
         }
         Hand.Clear();
 
-        // Draw cards after discarding
-        DrawCards(3);
+        // End turn
+        Turns.NextTurn();
     }
 
     // Determine if the object selection is valid

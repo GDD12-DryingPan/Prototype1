@@ -8,8 +8,8 @@ public class GridMechanic : MonoBehaviour
     public int fieldNumber;
     public char fieldCharacter;
     private SpriteRenderer render;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         Instantiate(gameObject1, gameObject.transform);
     }

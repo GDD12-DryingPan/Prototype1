@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5608527248460799312}
   - component: {fileID: 5608527248460799314}
   - component: {fileID: 2829365513954373128}
+  - component: {fileID: -2072677941530093712}
   - component: {fileID: 3197967693188436251}
   m_Layer: 0
   m_Name: Wolf
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608527248460799317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6653d5764e977d9478a703f37f229bf3, type: 3}
   m_Name: 
@@ -109,7 +110,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608527248460799317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c26b8181e33f2dc4ab8c85f782bc218a, type: 3}
   m_Name: 
@@ -127,7 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6856a24170a71b4d93e11fcc4c30ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 20
   MaximumHitPoints: 20
   Shield: 0
 --- !u!114 &5608527248460799314
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608527248460799317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b53add113ee80a4e948b44b328290da, type: 3}
   m_Name: 
@@ -155,6 +155,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnemy: 1
+--- !u!114 &-2072677941530093712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608527248460799317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e249e1697cf1907459d3398012cc364f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &3197967693188436251
 BoxCollider2D:
   m_ObjectHideFlags: 0
