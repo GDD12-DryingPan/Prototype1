@@ -5,27 +5,35 @@ using UnityEngine;
 
 public class Turns : MonoBehaviour
 {
-    private IList<Character> characters;
+    private IList<Character> Characters;
     private int i = 0;
+    private System.Random random = new System.Random();
 
     // Start is called before the first frame update
     void Start()
     {
-        characters = FindObjectsOfType<Character>();
+        Characters = FindObjectsOfType<Character>();
         NextTurn();
     }
 
     public void NextTurn()
     {
         // Disable actions for previous character
+        foreach (Character character in Characters)
+        {
+            foreach (Transform indicator in character.gameObject.transform)
+            {
+                indicator.GetComponent<Renderer>().enabled = false;
+            }
+        }
 
-        if (i >= characters.Count())
+        // Reset turns
+        if (i >= Characters.Count())
         {
             i = 0;
         }
 
-        Character characterOnTurn = characters.ElementAt(i);
-        Debug.Log(characterOnTurn);
+        Character characterOnTurn = Characters.ElementAt(i);
 
         if (!characterOnTurn.IsEnemy)
         {
@@ -37,19 +45,18 @@ public class Turns : MonoBehaviour
         }
         else
         {
-            // Enemy, pick a random available move
+            // Enemy, pick a random character and a random available move
+            var indicator = characterOnTurn.gameObject.transform.GetChild(0).GetComponent<Renderer>();
+            indicator.enabled = true;
+
+            int characterIndex = random.Next(Characters.Count());
+            Character character = Characters.ElementAt(characterIndex);
+
             Enemy enemy = characterOnTurn.gameObject.GetComponent<Enemy>();
-            enemy.ExecuteMove();
+            enemy.ExecuteMove(character);
 
             i++;
-            NextTurn();
+            Invoke("NextTurn", 3);
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

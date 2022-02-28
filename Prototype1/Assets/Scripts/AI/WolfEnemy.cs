@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class WolfEnemy : Enemy
 {
-    //private IList<EnemyMove> enemyMoves = new List<EnemyMove>();
-
     // Start is called before the first frame update
     void Start()
     {
-        // Basic attack
+        // Attack
         enemyMoves.Add(new EnemyMove
         {
             Attack = 5,
@@ -17,18 +15,12 @@ public class WolfEnemy : Enemy
             Heal = 0,
         });
 
-        // Powerful attack
+        // Protect
         enemyMoves.Add(new EnemyMove
         {
-            Attack = 10,
-            Shield = 0,
+            Attack = 0,
+            Shield = 5,
             Heal = 0,
         });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -6,15 +6,18 @@ public class Character : MonoBehaviour
 {
     public bool IsEnemy = false;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        foreach (Transform indicator in this.gameObject.transform)
+        {
+            indicator.GetComponent<Renderer>().enabled = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Mouse exits the character
+    void OnMouseExit()
     {
-        
+        var indicator = this.gameObject.transform.GetChild(0).GetComponent<Renderer>();
+        indicator.enabled = false;
     }
 }

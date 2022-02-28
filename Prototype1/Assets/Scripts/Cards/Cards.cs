@@ -37,6 +37,10 @@ public class Cards : MonoBehaviour
                 var index = CardButtons.ElementAt(i).GetComponent<CardButton>().i;
 
                 cardButton.onClick.AddListener(delegate { PlayCard(index); });
+
+                var color = cardButton.targetGraphic.color;
+                color.a = 0;
+                cardButton.targetGraphic.color = color;
             }
         }
 
@@ -61,23 +65,26 @@ public class Cards : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+    {   
+        if (IsCardBeingPlayed)
         {
-            if (IsCardBeingPlayed)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-                if (hit.collider != null)
+            if (hit.collider != null)
+            {
+                Card CardBeingPlayed = Hand.ElementAt(CardBeingPlayedIndex);
+                Character character = hit.collider.gameObject.GetComponent<Character>();
+                if (character != null)
                 {
-                    Card CardBeingPlayed = Hand.ElementAt(CardBeingPlayedIndex);
-                    Character character = hit.collider.gameObject.GetComponent<Character>();
-                    if (character != null)
+                    if (ValidMove(CardBeingPlayed, character))
                     {
-                        if (ValidMove(CardBeingPlayed, character))
+                        var indicator = character.gameObject.transform.GetChild(0).GetComponent<Renderer>();
+                        indicator.enabled = true;
+
+                        // TODO: Apply card action to the selected character
+                        if (Input.GetMouseButtonDown(0))
                         {
-                            // TODO: Apply card action to the selected character
                             if (CardBeingPlayed.ApplyToEnemy)
                             {
                                 // Debuff to enemy
@@ -102,6 +109,7 @@ public class Cards : MonoBehaviour
                                     healthBehaviour.Heal(CardBeingPlayed.Heal);
                                 }
                             }
+
 
                             // Card sound effect
                             PlaySoundEffect(CardBeingPlayed.SoundEffect);
@@ -185,6 +193,10 @@ public class Cards : MonoBehaviour
 
             Button cardButton = CardButtons.ElementAt(i).GetComponent<Button>();
             cardButton.image.sprite = cardPrefabButton.image.sprite;
+
+            var color = cardButton.targetGraphic.color;
+            color.a = 100;
+            cardButton.targetGraphic.color = color;
         }
     }
 
@@ -224,6 +236,15 @@ public class Cards : MonoBehaviour
             DiscardPile.Add(card);
         }
         Hand.Clear();
+
+        for (int i = 0; i < CardButtons.Count(); i++)
+        {
+            Button cardButton = CardButtons.ElementAt(i).GetComponent<Button>();
+
+            var color = cardButton.targetGraphic.color;
+            color.a = 0;
+            cardButton.targetGraphic.color = color;
+        }
 
         // End turn
         Turns.NextTurn();

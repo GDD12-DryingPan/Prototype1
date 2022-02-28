@@ -9,21 +9,30 @@ public class Enemy : MonoBehaviour
 
     private System.Random random = new System.Random();
 
-    public void ExecuteMove()
+    public void ExecuteMove(Character character)
     {
-        int i = random.Next(enemyMoves.Count);
+        int i = random.Next(enemyMoves.Count());
         EnemyMove enemyMove = enemyMoves.ElementAt(i);
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        while ((enemyMove.Attack > 0 && character.IsEnemy) || (enemyMove.Attack == 0 && !character.IsEnemy))
+        {
+            i = random.Next(enemyMoves.Count());
+            enemyMove = enemyMoves.ElementAt(i);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (enemyMove.Attack > 0)
+        {
+            Debug.Log("Attack");
+
+            var indicator = character.gameObject.transform.GetChild(1).GetComponent<Renderer>();
+            indicator.enabled = true;
+        }
+        else
+        {
+            Debug.Log("Protect");
+
+            var indicator = character.gameObject.transform.GetChild(0).GetComponent<Renderer>();
+            indicator.enabled = true;
+        }
     }
 }

@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 7788108992451134116}
   - component: {fileID: 4091057063475496949}
   - component: {fileID: 3445507881610449168}
-  - component: {fileID: -2964386335325204040}
   - component: {fileID: -6451902784783390621}
   - component: {fileID: -136527284191703362}
   - component: {fileID: 8799113490151244176}
-  - component: {fileID: -4665778563584556121}
   - component: {fileID: -9165097796882103426}
   m_Layer: 0
   m_Name: OldMan
@@ -119,19 +117,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaximumHitPoints: 100
   Shield: 0
---- !u!114 &-2964386335325204040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7788108992451134119}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6653d5764e977d9478a703f37f229bf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attack: 50
 --- !u!114 &-6451902784783390621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,22 +169,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40.11, y: 45.13477}
   m_EdgeRadius: 0
---- !u!114 &-4665778563584556121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7788108992451134119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0fbaf9e644967c469f1c79fe0b3ad12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitialDeck:
-  - {fileID: 8399312975394972042, guid: d1f70ae4c917aa9439f59dff26de8363, type: 3}
-  - {fileID: 5541671581582440190, guid: 91607bea9e36b984c82b9bdd6fbe8a04, type: 3}
-  - {fileID: 1218146498078411977, guid: a14adff7178432646bc98b57dc661d4c, type: 3}
 --- !u!114 &-9165097796882103426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,9 +183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialDeck:
   - {fileID: 8399312975394972042, guid: d1f70ae4c917aa9439f59dff26de8363, type: 3}
-  - {fileID: 5541671581582440190, guid: 91607bea9e36b984c82b9bdd6fbe8a04, type: 3}
   - {fileID: 1218146498078411977, guid: a14adff7178432646bc98b57dc661d4c, type: 3}
-  CanPlay: 0
+  - {fileID: 5541671581582440190, guid: 91607bea9e36b984c82b9bdd6fbe8a04, type: 3}
 --- !u!1 &7788108993582997909
 GameObject:
   m_ObjectHideFlags: 0
