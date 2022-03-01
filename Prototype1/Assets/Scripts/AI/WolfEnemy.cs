@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WolfEnemy : Enemy
 {
+    public AudioClip AttackSoundEffect;
+    public AudioClip DefendSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,8 @@ public class WolfEnemy : Enemy
             Attack = 5,
             Shield = 0,
             Heal = 0,
+            Name = "Attack",
+            SoundEffect = AttackSoundEffect,
         });
 
         // Protect
@@ -21,6 +26,8 @@ public class WolfEnemy : Enemy
             Attack = 0,
             Shield = 5,
             Heal = 0,
+            Name = "Protect",
+            SoundEffect = DefendSoundEffect,
         });
     }
 }

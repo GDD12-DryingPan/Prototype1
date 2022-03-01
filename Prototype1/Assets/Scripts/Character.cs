@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public bool IsEnemy = false;
+    public Sprite CharacterImage;
 
     void Awake()
     {
