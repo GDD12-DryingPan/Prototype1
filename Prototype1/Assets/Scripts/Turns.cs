@@ -2,9 +2,13 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Turns : MonoBehaviour
 {
+    public Image CharacterImage;
+    public Text MoveText;
+
     private IList<Character> Characters;
     private int i = 0;
     private System.Random random = new System.Random();
@@ -19,11 +23,40 @@ public class Turns : MonoBehaviour
     public void NextTurn()
     {
         // Disable actions for previous character
+        MoveText.text = string.Empty;
+
         foreach (Character character in Characters)
         {
             foreach (Transform indicator in character.gameObject.transform)
             {
                 indicator.GetComponent<Renderer>().enabled = false;
+            }
+        }
+
+        // Reset the list of characters
+        int numberOfEnemies = 0;
+        int numberOfPlayers = 0;
+
+        var characters = FindObjectsOfType<Character>();
+        Characters = new List<Character>();
+        foreach (Character character in characters)
+        {
+            if (character.gameObject.GetComponent<Renderer>().enabled)
+            {
+                Characters.Add(character);
+
+                if (character.IsEnemy)
+                {
+                    numberOfEnemies++;
+                }
+                else
+                {
+                    numberOfPlayers++;
+                }
+            }
+            else
+            {
+                Destroy(character.gameObject);
             }
         }
 
@@ -34,6 +67,7 @@ public class Turns : MonoBehaviour
         }
 
         Character characterOnTurn = Characters.ElementAt(i);
+        CharacterImage.sprite = characterOnTurn.CharacterImage;
 
         if (!characterOnTurn.IsEnemy)
         {
@@ -53,10 +87,20 @@ public class Turns : MonoBehaviour
             Character character = Characters.ElementAt(characterIndex);
 
             Enemy enemy = characterOnTurn.gameObject.GetComponent<Enemy>();
-            enemy.ExecuteMove(character);
+            enemy.ExecuteMove(character, this);
 
             i++;
             Invoke("NextTurn", 3);
         }
+    }
+
+    public void DelayNextTurn()
+    {
+        Invoke("NextTurn", 3);
+    }
+
+    public void UpdateMove(string move)
+    {
+        MoveText.text = move;
     }
 }

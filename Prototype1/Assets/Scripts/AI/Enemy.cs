@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     private System.Random random = new System.Random();
 
-    public void ExecuteMove(Character character)
+    public void ExecuteMove(Character character, Turns turns)
     {
         int i = random.Next(enemyMoves.Count());
         EnemyMove enemyMove = enemyMoves.ElementAt(i);
@@ -34,5 +34,14 @@ public class Enemy : MonoBehaviour
             var indicator = character.gameObject.transform.GetChild(0).GetComponent<Renderer>();
             indicator.enabled = true;
         }
+
+        turns.UpdateMove(enemyMove.Name);
+        PlaySoundEffect(enemyMove.SoundEffect);
+    }
+
+    // Play sound effect
+    private void PlaySoundEffect(AudioClip audio)
+    {
+        AudioSource.PlayClipAtPoint(audio, Vector2.zero, 1f);
     }
 }

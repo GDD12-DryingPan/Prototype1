@@ -92,7 +92,7 @@ public class Cards : MonoBehaviour
 
                                 if (CardBeingPlayed.Attack > 0)
                                 {
-                                    healthBehaviour.Damage(CardBeingPlayed.Attack);
+                                    healthBehaviour.Damage(CardBeingPlayed.Attack + CardBeingPlayed.AdditionalAttack);
                                 }
                             }
                             else
@@ -108,11 +108,21 @@ public class Cards : MonoBehaviour
                                 {
                                     healthBehaviour.Heal(CardBeingPlayed.Heal);
                                 }
+                                if (CardBeingPlayed.Berserk)
+                                {
+                                    foreach (Card card in Deck)
+                                    {
+                                        card.AdditionalAttack = card.Attack;
+                                    }
+                                }
                             }
 
 
                             // Card sound effect
                             PlaySoundEffect(CardBeingPlayed.SoundEffect);
+
+                            // Card name
+                            Turns.UpdateMove(CardBeingPlayed.Name);
 
                             // Remove card from hand
                             DiscardPile.Add(Hand.ElementAt(CardBeingPlayedIndex));
@@ -247,7 +257,7 @@ public class Cards : MonoBehaviour
         }
 
         // End turn
-        Turns.NextTurn();
+        Turns.DelayNextTurn();
     }
 
     // Determine if the object selection is valid
@@ -259,6 +269,6 @@ public class Cards : MonoBehaviour
     // Play sound effect
     private void PlaySoundEffect(AudioClip audio)
     {
-        AudioSource.PlayClipAtPoint(audio, Vector2.zero);
+        AudioSource.PlayClipAtPoint(audio, Vector2.zero, 1f);
     }
 }

@@ -35,6 +35,8 @@ public class HealthBehaviour : MonoBehaviour
         if (HitPoints <= 0)
         {
             // Die
+            this.gameObject.GetComponent<Renderer>().enabled = false;
+
             Debug.Log("DEAD");
         }
     }
