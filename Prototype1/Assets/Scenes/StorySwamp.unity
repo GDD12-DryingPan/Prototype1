@@ -446,7 +446,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08c3411a0466f2d419c5cdff16bcdbd3, type: 3}
-    m_FontSize: 28
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -457,13 +457,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Progress. After a sort of confrontation we were able to convince the village
-    elders to give us more of the information we needed. I seem that the maps we
-    search were stolen from the communal warehouse 15 years ago by a young rebel
-    who disappeared deeper into the forest.  The villagers have warned us that there
-    is an infested swamp in that direction. Despite the danger, the urgency of our
-    mission pushes us forward. I can only hope we find what we search before is too
-    long. '
+  m_Text: 'Progress. After a confrontation we were able to convince the village elders
+    to give us more information. It seems that the maps we are looking for were stolen
+    from the communal warehouse 15 years ago by a young rebel who disappeared deeper
+    into the forest. The villagers have warned us that there is an infested swamp
+    in that direction. Despite the danger, the urgency of our mission pushes us forward.
+    I can only hope we find what we are looking for before it is too late. '
 --- !u!222 &891133980
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -446,7 +446,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08c3411a0466f2d419c5cdff16bcdbd3, type: 3}
-    m_FontSize: 28
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -459,11 +459,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "We did it! Despite the eldritch horrors that guarded the artifact, we
     have at last obtained the Arcane Reactor, the last great source of magical energy
-    known to men. Once we arrive back at the city, we will be received as heroes,
-    but, despite that being a good motivator, we didn\u2019t embark in this mission
-    just for the glory. With this amount of raw energy, we will be finally able to
-    combat the entropy and lethargy that is engulfing our world. But stop thinking
-    about what lies ahead, now it\u2019s a moment for celebration!"
+    known to men. Once we arrive back at the city, we will be welcomed as heroes,
+    but we didn\u2019t embark in this mission just for the glory. With this amount
+    of raw energy, we will be finally able to combat the entropy and lethargy that
+    is engulfing our world. But stop thinking about what lies ahead, now it\u2019s
+    a moment for celebration!"
 --- !u!222 &891133980
 CanvasRenderer:
   m_ObjectHideFlags: 0

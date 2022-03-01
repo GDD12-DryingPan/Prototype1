@@ -446,7 +446,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08c3411a0466f2d419c5cdff16bcdbd3, type: 3}
-    m_FontSize: 28
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -459,7 +459,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: These estrange creatures seem to grow more numerous the deeper we go into
     the temple. They bear a style like that of the ancestors. Did the old ones create
-    these abominations or did the creatures imitate them? Either way, it is cleat
+    these abominations or did the creatures imitate them? Either way, it is clear
     to me that they must be related to the power source, the artifact we search.
     If my theories are correct, we will probably face something even more dangerous
     if we are to ever fulfil our objective.
