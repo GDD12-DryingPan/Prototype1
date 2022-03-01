@@ -13,6 +13,13 @@ public class GridMechanic : MonoBehaviour
     private GameGrid grid;
     void Start() {
         this.grid = new GameGrid(x, y, origin, scale, cellPrefab);
+
+        // Path search algorithm
+        var path = grid.PathSearch((1, 1), (4, 3));
+        foreach(var cell in path)
+        {
+            Debug.Log(cell);
+        }
     }
 
     void Update() {
