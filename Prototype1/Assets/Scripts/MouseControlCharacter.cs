@@ -33,29 +33,4 @@ public class MouseControlCharacter : MonoBehaviour
         mouseClickedOnce = Input.GetMouseButtonDown(0);
     }
 
-    void OnCollisionEntered2D(Collision2D c)
-    {
-        Debug.Log("Old man entered");
-        if (c.gameObject.tag == "Grid" && mouseClickedTwice)
-        {
-            Debug.Log("Clicked Grid after clicked on Character");
-            c.gameObject.GetComponent<GridMechanic>().gameObject1 = g1;
-            mouseClickedOnce = false;
-            mouseClickedTwice = false;
-            mouseHasContent = false;
-        }
-        if (c.gameObject.tag == "OldMan" && mouseClickedOnce)
-        {
-            Debug.Log("You selected the old man.");
-            g1 = c.gameObject;
-            mouseHasContent = true;
-        }
-        // later
-        if (c.gameObject.tag == "Wolf" && mouseClickedOnce)
-        {
-            g1 = c.gameObject;
-        }
-
-        mouseClickedOnce = Input.GetMouseButtonUp(0);
-    }
 }

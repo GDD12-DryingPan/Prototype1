@@ -19,41 +19,7 @@ public class MouseControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-            if (hit.collider != null)
-            {
-                //Debug.Log(hit.collider.transform.tag);
-
-                if (hit.collider.transform.tag == "OldMan")
-                {
-                    OldManSelected = true;
-                    OldMan = hit.collider.transform;
-                    OldMan oldman = hit.collider.transform.gameObject.GetComponent<OldMan>();
-                }
-                else if (hit.collider.transform.tag == "Grid" && OldManSelected)
-                {
-                    // deselect old man
-                    OldManSelected = false;
-                    // get fieldNumber and fieldCharacter from scriptobject, but first get the clicked on grids script
-                    GridMechanic grid = hit.collider.transform.gameObject.GetComponent<GridMechanic>();
-
-                    // we want to check where the old man or any character is going before letting them go there
-                    // for now we will output a debug log so we know the input has been registered and taken care off
-
-                    int number = grid.fieldNumber;
-                    char character = grid.fieldCharacter;
-
-                    // we will compare how the old mans grid number and character correlate to the clicked on grid and if 
-                    // the old man is allowed to move there or not
-                    // but not today.
-
-                    // NOTE: Open scripts OldMan and GridMechanic to work on functionality 
-
-                    OldMan.position = hit.collider.transform.position;
-                }
-            }
+            
         }
     }
 
