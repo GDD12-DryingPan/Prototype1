@@ -9,6 +9,7 @@ public class Card : MonoBehaviour
     // Debuffs
     public int Attack = 0;
     public int AdditionalAttack = 0;
+    public int Poison = 0;
 
     // Buffs
     public int Shield = 0;

@@ -22,14 +22,14 @@ public class Enemy : MonoBehaviour
 
         if (enemyMove.Attack > 0)
         {
-            Debug.Log("Attack");
+            character.gameObject.GetComponent<HealthBehaviour>().Damage(enemyMove.Attack);
 
             var indicator = character.gameObject.transform.GetChild(1).GetComponent<Renderer>();
             indicator.enabled = true;
         }
         else
         {
-            Debug.Log("Protect");
+            character.gameObject.GetComponent<HealthBehaviour>().Protect(enemyMove.Shield);
 
             var indicator = character.gameObject.transform.GetChild(0).GetComponent<Renderer>();
             indicator.enabled = true;

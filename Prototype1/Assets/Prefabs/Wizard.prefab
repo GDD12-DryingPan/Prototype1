@@ -184,8 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce66013a1a07640ad877cf1015a285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldNumber: 0
-  fieldCharacter: 0
 --- !u!114 &3445507881610449168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +198,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaximumHitPoints: 100
   Shield: 0
+  HitPoints: 0
+  Poison: 0
+  PoisonTurnsRemaining: 0
 --- !u!114 &-6451902784783390621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +271,7 @@ MonoBehaviour:
   - {fileID: 1218146498078411977, guid: a14adff7178432646bc98b57dc661d4c, type: 3}
   - {fileID: 5541671581582440190, guid: 91607bea9e36b984c82b9bdd6fbe8a04, type: 3}
   - {fileID: 5541671581582440190, guid: d1d640da94b8ae6489e595b9d0618318, type: 3}
+  - {fileID: 1218146498078411977, guid: 29532467b337e1c4d9df293bef556b31, type: 3}
 --- !u!1 &8268032692966372926
 GameObject:
   m_ObjectHideFlags: 0

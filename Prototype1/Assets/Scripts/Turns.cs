@@ -22,7 +22,7 @@ public class Turns : MonoBehaviour
 
     public void NextTurn()
     {
-        // Disable actions for previous character
+        // Disable indicators for previous character
         MoveText.text = string.Empty;
 
         foreach (Character character in Characters)
@@ -41,6 +41,8 @@ public class Turns : MonoBehaviour
         Characters = new List<Character>();
         foreach (Character character in characters)
         {
+            Debug.Log($"{character} {character.gameObject.GetComponent<HealthBehaviour>().HitPoints}");
+
             if (character.gameObject.GetComponent<Renderer>().enabled)
             {
                 Characters.Add(character);
@@ -59,6 +61,7 @@ public class Turns : MonoBehaviour
                 Destroy(character.gameObject);
             }
         }
+        Debug.Log("");
 
         // Reset turns
         if (i >= Characters.Count())
@@ -96,6 +99,13 @@ public class Turns : MonoBehaviour
 
     public void DelayNextTurn()
     {
+        // Poison damage is applied after our character is on turn
+        foreach (Character character in Characters)
+        {
+            var healthBehaviour = character.gameObject.GetComponent<HealthBehaviour>();
+            healthBehaviour.PoisonDamage();
+        }
+
         Invoke("NextTurn", 3);
     }
 

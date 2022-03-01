@@ -8,7 +8,10 @@ public class HealthBehaviour : MonoBehaviour
     public double MaximumHitPoints;
     public double Shield;
 
-    private double HitPoints;
+    public double HitPoints;
+
+    public double Poison;
+    public int PoisonTurnsRemaining;
 
     void Start()
     {
@@ -54,5 +57,19 @@ public class HealthBehaviour : MonoBehaviour
     public void Protect(double protect)
     {
         Shield += protect;
+    }
+
+    public void PoisonDamage()
+    {
+        if (Poison > 0 && PoisonTurnsRemaining > 0)
+        {
+            Damage(Poison);
+            PoisonTurnsRemaining--;
+
+            if (PoisonTurnsRemaining == 0)
+            {
+                Poison = 0;
+            }
+        }
     }
 }

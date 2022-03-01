@@ -94,6 +94,12 @@ public class Cards : MonoBehaviour
                                 {
                                     healthBehaviour.Damage(CardBeingPlayed.Attack + CardBeingPlayed.AdditionalAttack);
                                 }
+                                if (CardBeingPlayed.Poison > 0)
+                                {
+                                    // Poison is applied for the following three turns by default
+                                    healthBehaviour.Poison = CardBeingPlayed.Poison;
+                                    healthBehaviour.PoisonTurnsRemaining += 3;
+                                }
                             }
                             else
                             {
