@@ -171,10 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -383,6 +383,7 @@ MonoBehaviour:
   Berserk: 0
   SoundEffect: {fileID: 0}
   Name: 
+  Description: 
 --- !u!114 &123465369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,6 +540,7 @@ MonoBehaviour:
   Berserk: 0
   SoundEffect: {fileID: 0}
   Name: 
+  Description: 
 --- !u!114 &629784701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0025024414}
+  m_AnchoredPosition: {x: 0, y: 0.0024414062}
   m_SizeDelta: {x: 0, y: 0.0050049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166505834
@@ -1018,6 +1020,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterImage: {fileID: 0}
   MoveText: {fileID: 0}
+  CardTitleText: {fileID: 0}
+  CardDescriptionText: {fileID: 0}
+  VictoryCanvas: {fileID: 0}
+  CardRewardText: {fileID: 0}
+  DefeatCanvas: {fileID: 0}
 --- !u!4 &1316599520
 Transform:
   m_ObjectHideFlags: 0
@@ -1302,6 +1309,7 @@ MonoBehaviour:
   Berserk: 0
   SoundEffect: {fileID: 0}
   Name: 
+  Description: 
 --- !u!114 &1322568297
 MonoBehaviour:
   m_ObjectHideFlags: 0
