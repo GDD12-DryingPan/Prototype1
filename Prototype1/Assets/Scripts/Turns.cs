@@ -9,6 +9,14 @@ public class Turns : MonoBehaviour
     public Image CharacterImage;
     public Text MoveText;
 
+    public Text CardTitleText;
+    public Text CardDescriptionText;
+
+    public Canvas VictoryCanvas;
+    public Text CardRewardText;
+
+    public Canvas DefeatCanvas;
+
     private IList<Character> Characters;
     private int i = 0;
     private System.Random random = new System.Random();
@@ -41,8 +49,6 @@ public class Turns : MonoBehaviour
         Characters = new List<Character>();
         foreach (Character character in characters)
         {
-            Debug.Log($"{character} {character.gameObject.GetComponent<HealthBehaviour>().HitPoints}");
-
             if (character.gameObject.GetComponent<Renderer>().enabled)
             {
                 Characters.Add(character);
@@ -61,7 +67,29 @@ public class Turns : MonoBehaviour
                 Destroy(character.gameObject);
             }
         }
-        Debug.Log("");
+
+        // If our character or all enemies are dead, no further actions can be taken
+        if (numberOfPlayers == 0)
+        {
+            // Defeat
+            DefeatCanvas.gameObject.SetActive(true);
+            return;
+        }
+        else if (numberOfEnemies == 0)
+        {
+            // Card reward
+            CardRewards cardRewards = this.gameObject.GetComponent<CardRewards>();
+            Card card = cardRewards.GetRandomReward(0.2);
+
+            Character character = Characters.FirstOrDefault();
+            Cards characterCards = character.gameObject.GetComponent<Cards>();
+
+            characterCards.AddToDeck(card);
+            CardRewardText.text = string.Format($"{card.Name}\n{card.Description}");
+
+            VictoryCanvas.gameObject.SetActive(true);
+            return;
+        }
 
         // Reset turns
         if (i >= Characters.Count())
@@ -109,8 +137,17 @@ public class Turns : MonoBehaviour
         Invoke("NextTurn", 3);
     }
 
+    public void UpdateCardSelected(Card card)
+    {
+        CardTitleText.text = card.Name;
+        CardDescriptionText.text = card.Description;
+    }
+
     public void UpdateMove(string move)
     {
         MoveText.text = move;
+
+        CardTitleText.text = string.Empty;
+        CardDescriptionText.text = string.Empty;
     }
 }

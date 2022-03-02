@@ -50,6 +50,9 @@ public class Cards : MonoBehaviour
         {
             foreach (Card card in InitialDeck)
             {
+                // Additional damage is reset if applied in the previous battle
+                card.AdditionalAttack = 0;
+
                 Deck.Add(card);
             }
         }
@@ -152,6 +155,11 @@ public class Cards : MonoBehaviour
         }
     }
 
+    public void AddToDeck(Card card)
+    {
+        Deck.Add(card);
+    }
+
     // Draw cards from draw pile
     public void DrawCards(int numberOfCards, Turns turns)
     {
@@ -240,6 +248,9 @@ public class Cards : MonoBehaviour
                 Vector3 position = cardButton.gameObject.transform.position;
                 position.y += 0.25f;
                 cardButton.gameObject.transform.position = position;
+
+                Card cardBeingPlayed = Hand.ElementAt(CardBeingPlayedIndex);
+                Turns.UpdateCardSelected(cardBeingPlayed);
             }
         }
     }

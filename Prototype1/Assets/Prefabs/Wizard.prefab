@@ -268,10 +268,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialDeck:
   - {fileID: 8399312975394972042, guid: d1f70ae4c917aa9439f59dff26de8363, type: 3}
+  - {fileID: 8399312975394972042, guid: d1f70ae4c917aa9439f59dff26de8363, type: 3}
   - {fileID: 1218146498078411977, guid: a14adff7178432646bc98b57dc661d4c, type: 3}
-  - {fileID: 5541671581582440190, guid: 91607bea9e36b984c82b9bdd6fbe8a04, type: 3}
-  - {fileID: 5541671581582440190, guid: d1d640da94b8ae6489e595b9d0618318, type: 3}
-  - {fileID: 1218146498078411977, guid: 29532467b337e1c4d9df293bef556b31, type: 3}
+  - {fileID: 1218146498078411977, guid: a14adff7178432646bc98b57dc661d4c, type: 3}
 --- !u!1 &8268032692966372926
 GameObject:
   m_ObjectHideFlags: 0

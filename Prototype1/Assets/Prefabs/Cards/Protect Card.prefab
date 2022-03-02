@@ -135,8 +135,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ApplyToEnemy: 0
   Attack: 0
+  AdditionalAttack: 0
+  Poison: 0
   Shield: 10
   Heal: 0
   Berserk: 0
   SoundEffect: {fileID: 8300000, guid: 514b27e1363ae0a40be2854c7a4f6dd8, type: 3}
   Name: Shield
+  Description: Blocks some incoming damage

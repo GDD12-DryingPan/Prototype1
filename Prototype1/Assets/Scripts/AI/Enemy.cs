@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public AudioClip AttackSoundEffect;
+    public AudioClip DefendSoundEffect;
+
     protected IList<EnemyMove> enemyMoves = new List<EnemyMove>();
 
     private System.Random random = new System.Random();

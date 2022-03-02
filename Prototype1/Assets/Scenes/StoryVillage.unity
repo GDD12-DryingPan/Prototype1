@@ -471,11 +471,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Brown and green announce our entrance to the small forest village, the
-    last one in the area. Most people have abandoned their communities and travelled
-    to the cities in hopes of outrunning the collapse. Despite the hostile villagers,
+  m_Text: "We are on a quest to find an old temple of Zleles that holds a mystical
+    energy source that could solve the increasing energy crisis. Our journey begins
+    in a small forest village, the last one in the area. Most people have abandoned
+    their communities and travelled to the cities. Despite the hostile villagers,
     I am grateful that they haven\u2019t retreated yet, for the knowledge held inside
-    these houses may very well save us all."
+    these houses may very well help us on our expedition."
 --- !u!222 &891133980
 CanvasRenderer:
   m_ObjectHideFlags: 0

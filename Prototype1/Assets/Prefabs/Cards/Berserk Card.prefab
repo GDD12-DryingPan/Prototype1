@@ -136,8 +136,10 @@ MonoBehaviour:
   ApplyToEnemy: 0
   Attack: 0
   AdditionalAttack: 0
+  Poison: 0
   Shield: 0
   Heal: 0
   Berserk: 1
   SoundEffect: {fileID: 8300000, guid: 89528f23c5b871d4aa790f00c2c7253c, type: 3}
   Name: Berserk
+  Description: Increase all attack damage for the combat

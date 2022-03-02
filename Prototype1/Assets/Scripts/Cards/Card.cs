@@ -20,4 +20,5 @@ public class Card : MonoBehaviour
     public AudioClip SoundEffect;
 
     public string Name;
+    public string Description;
 }
