@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 33bb61456586f4b428c86a182b556fd1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Draconis
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4b8d9b526c0844d46b4050e7993be57b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
