@@ -4,27 +4,17 @@ using UnityEngine;
 
 public class Wolf : Enemy
 {
+    public AudioClip ClawingSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
         // Attack
         enemyMoves.Add(new EnemyMove
         {
-            Attack = 5,
-            Shield = 0,
-            Heal = 0,
+            Attack = 3,
             Name = "Clawing",
-            SoundEffect = AttackSoundEffect,
-        });
-
-        // Protect
-        enemyMoves.Add(new EnemyMove
-        {
-            Attack = 0,
-            Shield = 5,
-            Heal = 0,
-            Name = "Protect",
-            SoundEffect = DefendSoundEffect,
+            SoundEffect = ClawingSoundEffect,
         });
     }
 }

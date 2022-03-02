@@ -17,15 +17,35 @@ public class Turns : MonoBehaviour
 
     public Canvas DefeatCanvas;
 
+    public string NextScene;
+
     private IList<Character> Characters;
     private int i = 0;
     private System.Random random = new System.Random();
+
+    private bool Victory = false;
+    private bool Defeat = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Characters = FindObjectsOfType<Character>();
         NextTurn();
+    }
+
+    void Update()
+    {
+        if (Defeat && Input.anyKeyDown)
+        {
+            SceneSwitcher.SwitchTo("GameMenu", new List<Card>());
+        }
+        else if (Victory && Input.anyKeyDown)
+        {
+            Character character = Characters.FirstOrDefault();
+            Cards characterCards = character.gameObject.GetComponent<Cards>();
+
+            SceneSwitcher.SwitchTo(NextScene, characterCards.GetDeck());
+        }
     }
 
     public void NextTurn()
@@ -73,6 +93,8 @@ public class Turns : MonoBehaviour
         {
             // Defeat
             DefeatCanvas.gameObject.SetActive(true);
+            Defeat = true;
+
             return;
         }
         else if (numberOfEnemies == 0)
@@ -88,6 +110,8 @@ public class Turns : MonoBehaviour
             CardRewardText.text = string.Format($"{card.Name}\n{card.Description}");
 
             VictoryCanvas.gameObject.SetActive(true);
+            Victory = true;
+
             return;
         }
 
@@ -114,11 +138,8 @@ public class Turns : MonoBehaviour
             var indicator = characterOnTurn.gameObject.transform.GetChild(0).GetComponent<Renderer>();
             indicator.enabled = true;
 
-            int characterIndex = random.Next(Characters.Count());
-            Character character = Characters.ElementAt(characterIndex);
-
             Enemy enemy = characterOnTurn.gameObject.GetComponent<Enemy>();
-            enemy.ExecuteMove(character, this);
+            enemy.ExecuteMove(Characters, this);
 
             i++;
             Invoke("NextTurn", 3);

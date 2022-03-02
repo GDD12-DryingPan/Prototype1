@@ -24,6 +24,14 @@ public class Cards : MonoBehaviour
 
     private System.Random random = new System.Random();
 
+    private void Awake()
+    {
+        if (SceneSwitcher.Deck.Count() > 0)
+        {
+            Deck = SceneSwitcher.Deck;
+        }
+    }
+
     void Start()
     {
         // Get card buttons
@@ -144,8 +152,7 @@ public class Cards : MonoBehaviour
 
                             IsCardBeingPlayed = false;
 
-                            // TODO: Incorporate into turn-based combat
-                            // At the moment we discard the hand and end turn as soon as any card is played
+                            // When the hand is discarded, the turn ends
                             CanPlay = false;
                             DiscardHand();
                         }
@@ -158,6 +165,11 @@ public class Cards : MonoBehaviour
     public void AddToDeck(Card card)
     {
         Deck.Add(card);
+    }
+
+    public IList<Card> GetDeck()
+    {
+        return Deck;
     }
 
     // Draw cards from draw pile

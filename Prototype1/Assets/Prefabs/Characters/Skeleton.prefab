@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5608527248460799312}
   - component: {fileID: 2829365513954373128}
   - component: {fileID: 6353436582233315686}
-  - component: {fileID: 7249366618397427382}
+  - component: {fileID: 906830228226328696}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Wolf
@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608527248460799317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 2.14, z: -1}
+  m_LocalPosition: {x: -0.02, y: 2.14, z: 1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 2481807837694395720}
@@ -226,7 +226,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 23.909998, y: 44.760216}
   m_EdgeRadius: 0
---- !u!114 &7249366618397427382
+--- !u!114 &906830228226328696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,8 +235,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5608527248460799317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e249e1697cf1907459d3398012cc364f, type: 3}
+  m_Script: {fileID: 11500000, guid: b4be836de7f2ec54989dff33ca19d2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackSoundEffect: {fileID: 8300000, guid: 715680b4e8aa7e24caa2d1a71050cccf, type: 3}
-  DefendSoundEffect: {fileID: 8300000, guid: 514b27e1363ae0a40be2854c7a4f6dd8, type: 3}
+  PirateSlashSoundEffect: {fileID: 8300000, guid: 715680b4e8aa7e24caa2d1a71050cccf, type: 3}
+  BlackShieldSoundEffect: {fileID: 8300000, guid: 514b27e1363ae0a40be2854c7a4f6dd8, type: 3}
