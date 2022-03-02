@@ -6,6 +6,7 @@ using CodeMonkey.Utils;
 public class GridMechanic : MonoBehaviour
 {
     public GameObject cellPrefab;
+    public GameObject placer;
     public int x;
     public int y;
     public float scale;
@@ -14,17 +15,12 @@ public class GridMechanic : MonoBehaviour
     void Start() {
         this.grid = new GameGrid(x, y, origin, scale, cellPrefab);
 
-        // Path search algorithm
-        var path = grid.PathSearch((1, 1), (4, 3));
-        foreach(var cell in path)
-        {
-            Debug.Log(cell);
-        }
+        
     }
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log(grid.getCellAtPosition(UtilsClass.GetMouseWorldPosition()) == null);
+            grid.getCellAtPosition(UtilsClass.GetMouseWorldPosition()).placeOccupant(GameObject.Instantiate(placer));
         }
     }
 }

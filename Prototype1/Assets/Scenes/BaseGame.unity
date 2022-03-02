@@ -377,6 +377,7 @@ MonoBehaviour:
   ApplyToEnemy: 1
   Attack: 0
   AdditionalAttack: 0
+  Poison: 0
   Shield: 0
   Heal: 0
   Berserk: 0
@@ -532,6 +533,7 @@ MonoBehaviour:
   ApplyToEnemy: 1
   Attack: 0
   AdditionalAttack: 0
+  Poison: 0
   Shield: 0
   Heal: 0
   Berserk: 0
@@ -900,6 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellPrefab: {fileID: 6043283303672507931, guid: 512654e30e6b0394dac30b6d52efbdfd, type: 3}
+  placer: {fileID: 7788108992451134119, guid: a677571085a722d40905870a2f28f2fe, type: 3}
   x: 9
   y: 9
   scale: 0.5
@@ -1293,6 +1296,7 @@ MonoBehaviour:
   ApplyToEnemy: 1
   Attack: 0
   AdditionalAttack: 0
+  Poison: 0
   Shield: 0
   Heal: 0
   Berserk: 0
