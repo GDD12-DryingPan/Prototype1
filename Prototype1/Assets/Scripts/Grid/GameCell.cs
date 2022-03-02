@@ -7,12 +7,14 @@ public class GameCell
     public GameObject occupier;
     public GameObject cellSquare;
 
+
     public GameCell(GameObject cellObject) {
         this.cellSquare = cellObject;
     }
 
     public Vector3 getCenter() {
-        return cellSquare.transform.position;
+        Renderer renderer = this.cellSquare.GetComponent<Renderer>();
+        return renderer.bounds.center;
     }
 
     public void placeOccupant(GameObject occupant) {
