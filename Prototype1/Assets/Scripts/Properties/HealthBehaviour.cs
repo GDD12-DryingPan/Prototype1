@@ -16,9 +16,16 @@ public class HealthBehaviour : MonoBehaviour
     public bool Mirror;
     public int MirrorTurnsRemaining;
 
+    public HealthBar healthBar;
+    public HealthBar shieldBar;
+
     void Start()
     {
         HitPoints = MaximumHitPoints;
+        healthBar.SetMaxHealth(MaximumHitPoints);
+
+        shieldBar.SetMaxHealth(MaximumHitPoints);
+        shieldBar.SetHealth(Shield);
     }
 
     public void Damage(double damage)
@@ -38,6 +45,9 @@ public class HealthBehaviour : MonoBehaviour
             HitPoints -= damage;
         }
 
+        healthBar.SetHealth(HitPoints);
+        shieldBar.SetHealth(Shield);
+
         if (HitPoints <= 0)
         {
             // Die
@@ -55,11 +65,14 @@ public class HealthBehaviour : MonoBehaviour
         {
             HitPoints = MaximumHitPoints;
         }
+
+        healthBar.SetHealth(HitPoints);
     }
 
     public void Protect(double protect)
     {
         Shield += protect;
+        shieldBar.SetHealth(Shield);
     }
 
     public void PoisonDamage()
