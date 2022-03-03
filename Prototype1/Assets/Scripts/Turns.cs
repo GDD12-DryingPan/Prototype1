@@ -37,14 +37,15 @@ public class Turns : MonoBehaviour
     {
         if (Defeat && Input.anyKeyDown)
         {
-            SceneSwitcher.SwitchTo("GameMenu", new List<Card>());
+            SceneSwitcher.SwitchTo("GameMenu", new List<Card>(), 100);
         }
         else if (Victory && Input.anyKeyDown)
         {
             Character character = Characters.FirstOrDefault();
             Cards characterCards = character.gameObject.GetComponent<Cards>();
+            HealthBehaviour healthBehaviour = character.gameObject.GetComponent<HealthBehaviour>();
 
-            SceneSwitcher.SwitchTo(NextScene, characterCards.GetDeck());
+            SceneSwitcher.SwitchTo(NextScene, characterCards.GetDeck(), healthBehaviour.HitPoints);
         }
     }
 
@@ -57,7 +58,10 @@ public class Turns : MonoBehaviour
         {
             foreach (Transform indicator in character.gameObject.transform)
             {
-                indicator.GetComponent<Renderer>().enabled = false;
+                if (indicator.GetComponent<Renderer>() != null)
+                {
+                    indicator.GetComponent<Renderer>().enabled = false;
+                }
             }
         }
 

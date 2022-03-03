@@ -11,7 +11,10 @@ public class Character : MonoBehaviour
     {
         foreach (Transform indicator in this.gameObject.transform)
         {
-            indicator.GetComponent<Renderer>().enabled = false;
+            if (indicator.GetComponent<Renderer>() != null)
+            {
+                indicator.GetComponent<Renderer>().enabled = false;
+            }
         }
     }
 

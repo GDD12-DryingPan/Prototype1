@@ -105,6 +105,9 @@ public class Cards : MonoBehaviour
                                 {
                                     healthBehaviour.Damage(CardBeingPlayed.Attack + CardBeingPlayed.AdditionalAttack);
 
+                                    // Optional: Show particles on card effect
+                                    // Particles.Instance.Attack(character.gameObject.transform.position);
+
                                     if (healthBehaviour.Mirror)
                                     {
                                         HealthBehaviour characterHealthBehaviour = this.gameObject.GetComponent<HealthBehaviour>();
