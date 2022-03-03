@@ -140,6 +140,7 @@ MonoBehaviour:
   Shield: 0
   Heal: 0
   Berserk: 0
+  Mirror: 0
   SoundEffect: {fileID: 8300000, guid: 26f2295ef12377546abd7b04325be5d1, type: 3}
   Name: Poison
-  Description: Applies poison that does damage over time
+  Description: A negative effect on target that does damage over time

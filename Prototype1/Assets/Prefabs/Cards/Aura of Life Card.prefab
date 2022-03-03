@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5714687275705873097}
   - component: {fileID: 5541671581582440190}
   m_Layer: 5
-  m_Name: Ancient Medicine Card
+  m_Name: Aura of Life Card
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   Shield: 0
   Heal: 20
   Berserk: 0
+  Mirror: 0
   SoundEffect: {fileID: 8300000, guid: 7fda52c003941994788ba6f073b09d3a, type: 3}
-  Name: Ancient medicine
+  Name: Aura of Life
   Description: Restores greater health

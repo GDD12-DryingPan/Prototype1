@@ -13,6 +13,9 @@ public class HealthBehaviour : MonoBehaviour
     public double Poison;
     public int PoisonTurnsRemaining;
 
+    public bool Mirror;
+    public int MirrorTurnsRemaining;
+
     void Start()
     {
         HitPoints = MaximumHitPoints;
@@ -40,7 +43,7 @@ public class HealthBehaviour : MonoBehaviour
             // Die
             this.gameObject.GetComponent<Renderer>().enabled = false;
 
-            Debug.Log("DEAD");
+            //Debug.Log("DEAD");
         }
     }
 

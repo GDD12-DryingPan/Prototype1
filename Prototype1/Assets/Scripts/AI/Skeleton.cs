@@ -14,8 +14,8 @@ public class Skeleton : Enemy
         enemyMoves.Add(new EnemyMove
         {
             ApplyToEnemy = true,
-            Attack = 10,
-            Name = "Pirate slash",
+            Attack = 13,
+            Name = "Pirate Slash",
             SoundEffect = PirateSlashSoundEffect,
         });
 
@@ -24,7 +24,7 @@ public class Skeleton : Enemy
         {
             ApplyToEnemy = false,
             Shield = 10,
-            Name = "Black shield",
+            Name = "Black Shield",
             SoundEffect = BlackShieldSoundEffect,
         });
     }

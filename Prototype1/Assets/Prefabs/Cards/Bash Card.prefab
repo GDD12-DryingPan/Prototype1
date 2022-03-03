@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5490353473796237264}
   - component: {fileID: 5907296499469695403}
   - component: {fileID: 8684975797013486047}
-  - component: {fileID: 7624619338545101716}
   - component: {fileID: 8399312975394972042}
   m_Layer: 5
   m_Name: Bash Card
@@ -121,34 +120,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5907296499469695403}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Cards, Assembly-CSharp
-        m_MethodName: PlayCard
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
---- !u!114 &7624619338545101716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333776023925028947}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 099c12610176f384f8fc08f157cdadf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 10
-  Enemy: {fileID: 0}
-  AttackSoundEffect: {fileID: 0}
+      m_Calls: []
 --- !u!114 &8399312975394972042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +140,7 @@ MonoBehaviour:
   Shield: 0
   Heal: 0
   Berserk: 0
+  Mirror: 0
   SoundEffect: {fileID: 8300000, guid: 715680b4e8aa7e24caa2d1a71050cccf, type: 3}
   Name: Bash
   Description: A basic, low damage attack

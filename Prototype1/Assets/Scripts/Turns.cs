@@ -148,11 +148,17 @@ public class Turns : MonoBehaviour
 
     public void DelayNextTurn()
     {
-        // Poison damage is applied after our character is on turn
+        // After our character is on turn, apply poison damage and reduce the number of turns mirror is valid for
         foreach (Character character in Characters)
         {
             var healthBehaviour = character.gameObject.GetComponent<HealthBehaviour>();
             healthBehaviour.PoisonDamage();
+
+            healthBehaviour.MirrorTurnsRemaining--;
+            if (healthBehaviour.MirrorTurnsRemaining <= 0)
+            {
+                healthBehaviour.Mirror = false;
+            }
         }
 
         Invoke("NextTurn", 3);

@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BaseGame.unity
     guid: c6c642c455ad96044a72eed4ab6800ad
+  - enabled: 1
+    path: Assets/Scenes/MinimalScene.unity
+    guid: dcb5313e5b0ce764a9c3ea132e0ef040
+  - enabled: 1
+    path: Assets/Scenes/ShipScene.unity
+    guid: 0fac937b76d201349a91aee2b9f56e17
   m_configObjects: {}

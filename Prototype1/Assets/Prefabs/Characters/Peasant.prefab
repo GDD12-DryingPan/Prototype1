@@ -186,6 +186,8 @@ MonoBehaviour:
   HitPoints: 0
   Poison: 0
   PoisonTurnsRemaining: 0
+  Mirror: 0
+  MirrorTurnsRemaining: 0
 --- !u!114 &2829365513954373128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,4 +240,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2441a23b7e6944f43853529daade995c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForkPierceSoundEffect: {fileID: 8300000, guid: 715680b4e8aa7e24caa2d1a71050cccf, type: 3}
+  ForkPierceSoundEffect: {fileID: 8300000, guid: c3dcb0b73f6d1b143b58b3e7648e063f, type: 3}

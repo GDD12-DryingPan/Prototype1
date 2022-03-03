@@ -26,6 +26,12 @@ public class Enemy : MonoBehaviour
             if (enemyMove.Attack > 0)
             {
                 healthBehaviour.Damage(enemyMove.Attack + enemyMove.AdditionalAttack);
+
+                if (healthBehaviour.Mirror)
+                {
+                    HealthBehaviour characterHealthBehaviour = this.gameObject.GetComponent<HealthBehaviour>();
+                    characterHealthBehaviour.Damage(enemyMove.Attack + enemyMove.AdditionalAttack);
+                }
             }
             if (enemyMove.Poison > 0)
             {
@@ -57,6 +63,11 @@ public class Enemy : MonoBehaviour
                 {
                     move.AdditionalAttack = move.Attack;
                 }
+            }
+            if (enemyMove.Mirror)
+            {
+                healthBehaviour.Mirror = true;
+                healthBehaviour.MirrorTurnsRemaining = 3;
             }
         }
 

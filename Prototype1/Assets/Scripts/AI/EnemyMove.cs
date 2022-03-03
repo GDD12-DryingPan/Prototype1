@@ -15,6 +15,7 @@ public class EnemyMove
     public int Shield = 0;
     public int Heal = 0;
     public bool Berserk = false;
+    public bool Mirror = false;
 
     // Sound effect
     public AudioClip SoundEffect;

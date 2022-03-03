@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd801e6700ae0ff45a46237e7d1c6295, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb2d461de0c3bf54a9b7c808b9fd4893, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -140,6 +140,7 @@ MonoBehaviour:
   Shield: 10
   Heal: 0
   Berserk: 0
+  Mirror: 0
   SoundEffect: {fileID: 8300000, guid: 514b27e1363ae0a40be2854c7a4f6dd8, type: 3}
-  Name: Shield
-  Description: Blocks some incoming damage
+  Name: Protect
+  Description: Block some incoming damage

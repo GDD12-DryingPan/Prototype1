@@ -104,6 +104,12 @@ public class Cards : MonoBehaviour
                                 if (CardBeingPlayed.Attack > 0)
                                 {
                                     healthBehaviour.Damage(CardBeingPlayed.Attack + CardBeingPlayed.AdditionalAttack);
+
+                                    if (healthBehaviour.Mirror)
+                                    {
+                                        HealthBehaviour characterHealthBehaviour = this.gameObject.GetComponent<HealthBehaviour>();
+                                        characterHealthBehaviour.Damage(CardBeingPlayed.Attack + CardBeingPlayed.AdditionalAttack);
+                                    }
                                 }
                                 if (CardBeingPlayed.Poison > 0)
                                 {
@@ -131,6 +137,11 @@ public class Cards : MonoBehaviour
                                     {
                                         card.AdditionalAttack = card.Attack;
                                     }
+                                }
+                                if (CardBeingPlayed.Mirror)
+                                {
+                                    healthBehaviour.Mirror = true;
+                                    healthBehaviour.MirrorTurnsRemaining = 4;
                                 }
                             }
 
