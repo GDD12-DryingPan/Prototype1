@@ -137,10 +137,10 @@ MonoBehaviour:
   Attack: 0
   AdditionalAttack: 0
   Poison: 0
-  Shield: 0
+  Shield: 10
   Heal: 0
   Berserk: 0
   Mirror: 1
   SoundEffect: {fileID: 8300000, guid: 514b27e1363ae0a40be2854c7a4f6dd8, type: 3}
   Name: Battle Mirror
-  Description: Reflect all attack damage for a short time
+  Description: Creates a shield that reflects all attack damage for a short time
