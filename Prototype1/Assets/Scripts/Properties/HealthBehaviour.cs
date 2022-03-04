@@ -23,7 +23,6 @@ public class HealthBehaviour : MonoBehaviour
 
     void Awake()
     {
-        //HitPoints = MaximumHitPoints;
         healthBar.SetMaxHealth(MaximumHitPoints);
 
         shieldBar.SetMaxHealth(MaximumHitPoints);
