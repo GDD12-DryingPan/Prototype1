@@ -17,6 +17,8 @@ public class Turns : MonoBehaviour
 
     public Canvas DefeatCanvas;
 
+    public AudioClip Gong;
+
     public string NextScene;
 
     private IList<Character> Characters;
@@ -73,7 +75,7 @@ public class Turns : MonoBehaviour
         Characters = new List<Character>();
         foreach (Character character in characters)
         {
-            if (character.gameObject.GetComponent<Renderer>().enabled)
+            if (character.gameObject.GetComponent<HealthBehaviour>().HitPoints > 0)
             {
                 Characters.Add(character);
 
@@ -115,6 +117,8 @@ public class Turns : MonoBehaviour
 
             VictoryCanvas.gameObject.SetActive(true);
             Victory = true;
+
+            AudioSource.PlayClipAtPoint(Gong, Vector2.zero, 0.05f);
 
             return;
         }

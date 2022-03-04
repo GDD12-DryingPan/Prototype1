@@ -24,7 +24,7 @@ public class Cards : MonoBehaviour
 
     private System.Random random = new System.Random();
 
-    private void Awake()
+    void Awake()
     {
         if (SceneSwitcher.Deck.Count() > 0)
         {
@@ -34,6 +34,12 @@ public class Cards : MonoBehaviour
 
     void Start()
     {
+        if (SceneSwitcher.HitPoints > 0)
+        {
+            var healthBehaviour = gameObject.GetComponent<HealthBehaviour>();
+            healthBehaviour.Damage(healthBehaviour.MaximumHitPoints - SceneSwitcher.HitPoints);
+        }
+
         // Get card buttons
         if (CardButtons == null)
         {
@@ -105,13 +111,14 @@ public class Cards : MonoBehaviour
                                 {
                                     healthBehaviour.Damage(CardBeingPlayed.Attack + CardBeingPlayed.AdditionalAttack);
 
-                                    // Optional: Show particles on card effect
-                                    // Particles.Instance.Attack(character.gameObject.transform.position);
+                                    //Particles.Instance.Attack(character.gameObject.transform.position);
 
                                     if (healthBehaviour.Mirror)
                                     {
                                         HealthBehaviour characterHealthBehaviour = this.gameObject.GetComponent<HealthBehaviour>();
                                         characterHealthBehaviour.Damage(CardBeingPlayed.Attack + CardBeingPlayed.AdditionalAttack);
+
+                                        //Particles.Instance.Attack(this.gameObject.transform.position);
                                     }
                                 }
                                 if (CardBeingPlayed.Poison > 0)
@@ -119,7 +126,13 @@ public class Cards : MonoBehaviour
                                     // Poison is applied for the following three turns by default
                                     healthBehaviour.Poison = CardBeingPlayed.Poison;
                                     healthBehaviour.PoisonTurnsRemaining += 3;
+
+                                    //Particles.Instance.Poison(character.gameObject.transform.position);
                                 }
+
+                                // Animate attacking character
+                                var animation = gameObject.GetComponent<Animation>();
+                                animation.Play();
                             }
                             else
                             {
@@ -129,10 +142,14 @@ public class Cards : MonoBehaviour
                                 if (CardBeingPlayed.Shield > 0)
                                 {
                                     healthBehaviour.Protect(CardBeingPlayed.Shield);
+
+                                    //Particles.Instance.Shield(character.gameObject.transform.position);
                                 }
                                 if (CardBeingPlayed.Heal > 0)
                                 {
                                     healthBehaviour.Heal(CardBeingPlayed.Heal);
+
+                                    //Particles.Instance.Heal(character.gameObject.transform.position);
                                 }
                                 if (CardBeingPlayed.Berserk)
                                 {
@@ -145,6 +162,8 @@ public class Cards : MonoBehaviour
                                 {
                                     healthBehaviour.Mirror = true;
                                     healthBehaviour.MirrorTurnsRemaining = 4;
+
+                                    //Particles.Instance.Shield(character.gameObject.transform.position);
                                 }
                             }
 

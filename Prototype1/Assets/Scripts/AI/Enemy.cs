@@ -27,10 +27,14 @@ public class Enemy : MonoBehaviour
             {
                 healthBehaviour.Damage(enemyMove.Attack + enemyMove.AdditionalAttack);
 
+                //Particles.Instance.Attack(character.gameObject.transform.position);
+
                 if (healthBehaviour.Mirror)
                 {
                     HealthBehaviour characterHealthBehaviour = this.gameObject.GetComponent<HealthBehaviour>();
                     characterHealthBehaviour.Damage(enemyMove.Attack + enemyMove.AdditionalAttack);
+
+                    //Particles.Instance.Attack(this.gameObject.transform.position);
                 }
             }
             if (enemyMove.Poison > 0)
@@ -38,7 +42,13 @@ public class Enemy : MonoBehaviour
                 // Poison is applied for the following three turns by default
                 healthBehaviour.Poison = enemyMove.Poison;
                 healthBehaviour.PoisonTurnsRemaining += 3;
+
+                //Particles.Instance.Poison(character.gameObject.transform.position);
             }
+
+            // Animate attacking character
+            var animation = gameObject.GetComponent<Animation>();
+            animation.Play();
         }
         else
         {
@@ -52,10 +62,14 @@ public class Enemy : MonoBehaviour
             if (enemyMove.Shield > 0)
             {
                 healthBehaviour.Protect(enemyMove.Shield);
+
+                //Particles.Instance.Shield(character.gameObject.transform.position);
             }
             if (enemyMove.Heal > 0)
             {
                 healthBehaviour.Heal(enemyMove.Heal);
+
+                //Particles.Instance.Heal(character.gameObject.transform.position);
             }
             if (enemyMove.Berserk)
             {
@@ -68,6 +82,8 @@ public class Enemy : MonoBehaviour
             {
                 healthBehaviour.Mirror = true;
                 healthBehaviour.MirrorTurnsRemaining = 3;
+
+                //Particles.Instance.Shield(character.gameObject.transform.position);
             }
         }
 

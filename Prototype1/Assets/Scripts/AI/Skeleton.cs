@@ -23,7 +23,7 @@ public class Skeleton : Enemy
         enemyMoves.Add(new EnemyMove
         {
             ApplyToEnemy = false,
-            Shield = 10,
+            Shield = 5,
             Name = "Black Shield",
             SoundEffect = BlackShieldSoundEffect,
         });

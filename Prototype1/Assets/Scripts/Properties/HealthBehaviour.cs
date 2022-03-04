@@ -19,13 +19,32 @@ public class HealthBehaviour : MonoBehaviour
     public HealthBar healthBar;
     public HealthBar shieldBar;
 
-    void Start()
+    private bool FadeOut = true;
+
+    void Awake()
     {
         HitPoints = MaximumHitPoints;
         healthBar.SetMaxHealth(MaximumHitPoints);
 
         shieldBar.SetMaxHealth(MaximumHitPoints);
         shieldBar.SetHealth(Shield);
+    }
+
+    void Update()
+    {
+        if (HitPoints <= 0 && FadeOut)
+        {
+            Color color = this.GetComponent<Renderer>().material.color;
+            float fade = color.a - Time.deltaTime;
+
+            color = new Color(color.r, color.g, color.b, fade);
+            this.GetComponent<Renderer>().material.color = color;
+
+            if (color.a <= 0)
+            {
+                FadeOut = false;
+            }
+        }
     }
 
     public void Damage(double damage)
@@ -48,13 +67,13 @@ public class HealthBehaviour : MonoBehaviour
         healthBar.SetHealth(HitPoints);
         shieldBar.SetHealth(Shield);
 
-        if (HitPoints <= 0)
-        {
-            // Die
-            this.gameObject.GetComponent<Renderer>().enabled = false;
+        //if (HitPoints <= 0)
+        //{
+        //    // Die
+        //    //this.gameObject.GetComponent<Renderer>().enabled = false;
 
-            //Debug.Log("DEAD");
-        }
+        //    //Debug.Log("DEAD");
+        //}
     }
 
     public void Heal(double heal)

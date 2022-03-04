@@ -138,8 +138,9 @@ MonoBehaviour:
   AdditionalAttack: 0
   Poison: 0
   Shield: 0
-  Heal: 5
+  Heal: 15
   Berserk: 0
+  Mirror: 0
   SoundEffect: {fileID: 8300000, guid: 7fda52c003941994788ba6f073b09d3a, type: 3}
   Name: Aura Mana
   Description: Restores some health
