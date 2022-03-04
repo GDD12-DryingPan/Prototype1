@@ -9,8 +9,7 @@ public class Boss : Enemy
     public AudioClip HealSoundEffect;
     public AudioClip ShieldSoundEffect;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Attack
         enemyMoves.Add(new EnemyMove

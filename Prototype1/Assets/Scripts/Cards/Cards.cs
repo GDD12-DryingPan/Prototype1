@@ -30,10 +30,7 @@ public class Cards : MonoBehaviour
         {
             Deck = SceneSwitcher.Deck;
         }
-    }
 
-    void Start()
-    {
         if (SceneSwitcher.HitPoints > 0)
         {
             var healthBehaviour = gameObject.GetComponent<HealthBehaviour>();
@@ -43,7 +40,7 @@ public class Cards : MonoBehaviour
         // Get card buttons
         if (CardButtons == null)
         {
-            CardButtons = GameObject.FindGameObjectsWithTag("Card");
+            CardButtons = GameObject.FindGameObjectsWithTag("Card").OrderBy(x => x.GetComponent<CardButton>().i).ToList();
 
             for (int i = 0; i < CardButtons.Count(); i++)
             {
@@ -80,6 +77,11 @@ public class Cards : MonoBehaviour
         // Shuffle the deck
         DrawPile = DrawPile.OrderBy(x => random.Next()).ToList();
     }
+
+    //void Start()
+    //{
+        
+    //}
 
     void Update()
     {   

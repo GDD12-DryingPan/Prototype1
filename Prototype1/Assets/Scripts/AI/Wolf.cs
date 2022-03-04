@@ -6,8 +6,7 @@ public class Wolf : Enemy
 {
     public AudioClip ClawingSoundEffect;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Attack
         enemyMoves.Add(new EnemyMove

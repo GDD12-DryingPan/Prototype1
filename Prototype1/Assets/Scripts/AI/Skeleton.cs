@@ -7,8 +7,7 @@ public class Skeleton : Enemy
     public AudioClip PirateSlashSoundEffect;
     public AudioClip BlackShieldSoundEffect;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Attack
         enemyMoves.Add(new EnemyMove

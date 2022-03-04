@@ -1929,7 +1929,7 @@ MonoBehaviour:
   CardRewardText: {fileID: 1323148258}
   DefeatCanvas: {fileID: 1708849351}
   Gong: {fileID: 8300000, guid: 5657f6f00a0be30489523c12f0060551, type: 3}
-  NextScene: Level9
+  NextScene: Level10
 --- !u!4 &1316599520
 Transform:
   m_ObjectHideFlags: 0

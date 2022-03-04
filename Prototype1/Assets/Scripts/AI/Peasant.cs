@@ -6,8 +6,7 @@ public class Peasant : Enemy
 {
     public AudioClip ForkPierceSoundEffect;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Attack
         enemyMoves.Add(new EnemyMove

@@ -11,6 +11,11 @@ public class Enemy : MonoBehaviour
 
     public void ExecuteMove(IList<Character> characters, Turns turns)
     {
+        //while (enemyMoves != null && !enemyMoves.Any())
+        //{
+        //    continue;
+        //}
+
         int i = random.Next(enemyMoves.Count());
         EnemyMove enemyMove = enemyMoves.ElementAt(i);
 
